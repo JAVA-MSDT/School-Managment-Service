@@ -1,5 +1,6 @@
 package com.bebestlang.bebest.mapper.user;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,6 +23,9 @@ public interface UserMapper {
 
     @Named("toSubjectSet")
     default Set<Subject> toSubjectSet(Set<SubjectDto> subjects) {
+        if(subjects == null) {
+            return Collections.emptySet();
+        }
         Set<Subject> subjectSet = new HashSet<>();
         subjects.forEach(subjectDto -> {
             Subject subject = new Subject(subjectDto.getId(), subjectDto.getSubject(), subjectDto.getDescription());
@@ -32,6 +36,10 @@ public interface UserMapper {
 
     @Named("toSubjectDtoSet")
     default Set<SubjectDto> toSubjectDtoSet(Set<Subject> subjects) {
+        if(subjects == null) {
+            return Collections.emptySet();
+        }
+
         Set<SubjectDto> subjectSet = new HashSet<>();
         subjects.forEach(subject -> {
             SubjectDto subjectDto = new SubjectDto(subject.getId(), subject.getSubject(), subject.getDescription());

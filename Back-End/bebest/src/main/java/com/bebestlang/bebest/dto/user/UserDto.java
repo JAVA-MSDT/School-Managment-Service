@@ -49,7 +49,7 @@ public class UserDto {
     @ApiModelProperty(value = "User role", example = "ADMIN, TEACHER, STUDENT, PARENT")
     private Role role;
 
-    @ApiModelProperty(value = "User Subjects", example = "Set of subjects")
+    @ApiModelProperty(value = "User Subjects", example = "Set of subjects", dataType = "array")
     private Set<SubjectDto> subjects;
 
     @ApiModelProperty(value = "Users Set", example = "Set of Users", notes = "Could be Children for a Parent role, Students for Teacher or Teachers for Students")
