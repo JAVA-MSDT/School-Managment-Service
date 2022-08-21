@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.bebestlang.bebest.dto.training.SubjectDto;
 import com.bebestlang.bebest.modal.user.Role;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -40,13 +41,14 @@ public class UserDto {
     @ApiModelProperty(value = "User Phone", example = "+## ### ### ###")
     private String phoneNumber;
 
-    @ApiModelProperty(value = "User Birth Date", example = "YYYY/MM/DD")
+    @ApiModelProperty(value = "User Birth Date", example = "2000-01-25")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
 
     @ApiModelProperty(value = "User Address", example = "address Object")
     private AddressDto address;
 
-    @ApiModelProperty(value = "User role", example = "ADMIN, TEACHER, STUDENT, PARENT")
+    @ApiModelProperty(value = "User role", example = "ADMIN, TEACHER, STUDENT or PARENT")
     private Role role;
 
     @ApiModelProperty(value = "User Subjects", example = "Set of subjects", dataType = "array")

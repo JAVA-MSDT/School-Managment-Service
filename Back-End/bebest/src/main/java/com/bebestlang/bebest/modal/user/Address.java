@@ -27,6 +27,8 @@ public class Address {
 
     private String building;
 
+    private String apartment;
+
     private String zipCode;
 
 }

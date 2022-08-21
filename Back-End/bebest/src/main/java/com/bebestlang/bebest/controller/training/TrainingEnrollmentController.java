@@ -34,6 +34,11 @@ public class TrainingEnrollmentController {
         return trainingEnrollmentService.findAllTrainingEnrollment();
     }
 
+    @GetMapping("/training-enrolments/training/{trainingId}")
+    public Flux<TrainingEnrollmentDto> findAllTrainingByTrainingId(@PathVariable("trainingId") String trainingId) {
+        return trainingEnrollmentService.findAllTrainingByTrainingId(trainingId);
+    }
+
     @PostMapping
     public Mono<TrainingEnrollmentDto> saveTraining(@RequestBody TrainingEnrollmentDto trainingDto) {
         return trainingEnrollmentService.saveTrainingEnrollment(trainingDto);

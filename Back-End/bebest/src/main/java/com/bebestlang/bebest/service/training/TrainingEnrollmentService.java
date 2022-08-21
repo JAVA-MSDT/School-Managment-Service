@@ -26,6 +26,13 @@ public class TrainingEnrollmentService {
                 .map(trainingEnrollmentMapper::toTrainingEnrollmentDto);
     }
 
+    public Flux<TrainingEnrollmentDto> findAllTrainingByTrainingId(String trainingId) {
+        return trainingEnrollmentRepository.findAllByTrainingId(trainingId)
+                .switchIfEmpty(Mono.error(new TrainingEnrollmentException(
+                        String.format("Training Enrollments with Training Id:: %s not found ", trainingId))))
+                .map(trainingEnrollmentMapper::toTrainingEnrollmentDto);
+    }
+
     public Flux<TrainingEnrollmentDto> findAllTrainingEnrollment() {
         return trainingEnrollmentRepository.findAll()
                 .map(trainingEnrollmentMapper::toTrainingEnrollmentDto);

@@ -1,0 +1,35 @@
+[
+    
+  {
+    "dailyStudentAttendance": [
+        "222222222", "5555555555"
+  ],
+  "_id": "11111111",
+  "trainingId": "2222222222",
+  "trainingTime": "2022-07-25T16:00:00"
+},
+{
+    "dailyStudentAttendance": [
+        "222222222"
+      ],
+  "_id": "22222222",
+  "trainingId": "2222222222",
+  "trainingTime": "2022-07-28T16:00:00"
+},
+{
+    "dailyStudentAttendance": [
+        "222222222", "5555555555"
+  ],
+  "_id": "3333333",
+  "trainingId": "2222222222",
+  "trainingTime": "2022-08-01T16:00:00"
+},
+{
+    "dailyStudentAttendance": [
+        "5555555555"
+      ],
+  "_id": "44444444",
+  "trainingId": "2222222222",
+  "trainingTime": "2022-08-04T16:00:00"
+}
+]

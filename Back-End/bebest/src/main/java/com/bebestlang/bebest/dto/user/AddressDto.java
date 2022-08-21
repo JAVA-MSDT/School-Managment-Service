@@ -36,6 +36,9 @@ public class AddressDto {
     @ApiModelProperty(value = "Address Building", example = "4")
     private String building;
 
+    @ApiModelProperty(value = "Address Apartment", example = "8C")
+    private String apartment;
+
     @ApiModelProperty(value = "Address Postal Zipcode", example = "4444")
     private String zipCode;
 

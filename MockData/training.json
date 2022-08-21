@@ -1,0 +1,32 @@
+[
+  {
+    "description": {
+      "EN": "English Description",
+      "PL": "Polish Description"
+    },
+    "endDate": "2022-12-25",
+    "_id": "11111111111",
+    "startingDate": "2022-09-15",
+    "studentsIds": ["5555555555", "333333333"],
+    "subjectId": "222222222222",
+    "teacherId": "3333333333",
+    "title": "Arabic Training",
+    "trainingModes": "ONLINE",
+    "trainingStatus": "PROMOTED"
+  },
+  {
+    "description": {
+      "EN": "English Description",
+      "PL": "Polish Description"
+    },
+    "endDate": "2023-01-25",
+    "_id": "2222222222",
+    "startingDate": "2022-07-25",
+    "studentsIds": ["222222222", "5555555555"],
+    "subjectId": "11111111111111",
+    "teacherId": "44444444444",
+    "title": "Polish Training",
+    "trainingModes": "ON_SITE",
+    "trainingStatus": "STARTED"
+  }
+]

@@ -1,0 +1,353 @@
+[
+    {
+        "address":     {
+            "building": "4",
+            "apartment": "C",
+            "city": "Sharm El-Sheikh",
+            "country": "Egypt",
+            "_id": "111111111",
+            "provenance": "South sinai",
+            "street": "Red Sea Street",
+            "zipCode": "4444"
+          },
+        "dateOfBirth": "1985-01-25",
+        "email": "serenitydiver@hotmail.com",
+        "firstName": "Ahmed",
+        "_id": "1111111111111",
+        "lastName": "Mahmoud",
+        "middleName": "Samy Bakry",
+        "phoneNumber": "+48 572 344 887",
+        "role": "STUDENT",
+        "subjects": [
+            {
+                "_id": "11111111111111",
+                "subject": "Polish",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              },
+              {
+                "_id": "222222222222",
+                "subject": "Arabic",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              },
+              {
+                "_id": "33333333333333333",
+                "subject": "English",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              },
+              {
+                "_id": "444444444444444",
+                "subject": "Russian",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              }
+        ],
+        "username": "serenitydiver"
+      },
+      {
+        "address": {
+            "building": "2",
+            "apartment": "A",
+            "city": "Żory",
+            "country": "Poland",
+            "_id": "333333333",
+            "provenance": "Silesia",
+            "street": "Żory",
+            "zipCode": "4444"
+          },
+        "dateOfBirth": "1980-01-25",
+        "email": "ania@bebest.com",
+        "firstName": "Ania",
+        "_id": "222222222222",
+        "lastName": "Kania",
+        "middleName": "Kania",
+        "phoneNumber": "+48 000 000 000",
+        "role": "ADMIN",
+        "subjects": [
+            {
+                "_id": "11111111111111",
+                "subject": "Polish",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              },
+              {
+                "_id": "33333333333333333",
+                "subject": "English",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              } 
+        ],
+        "username": "aniakania"
+      },
+      {
+        "address": {
+            "building": "111",
+            "apartment": "8C",
+            "city": "Katowice",
+            "country": "Poland",
+            "_id": "222222222",
+            "provenance": "Silesia",
+            "street": "Gliwicka",
+            "zipCode": "40-855"
+          },
+        "dateOfBirth": "1995-04-15",
+        "email": "arabic@teacher.com",
+        "firstName": "Arabic",
+        "_id": "3333333333",
+        "lastName": "teacher",
+        "middleName": "Samy Bakry",
+        "phoneNumber": "+48 572 344 887",
+        "role": "TEACHER",
+        "subjects": [
+              {
+                "_id": "222222222222",
+                "subject": "Arabic",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              }
+        ],
+        "username": "arabicteacher"
+      },
+      {
+        "address": {
+            "building": "8",
+            "apartment": "28C",
+            "city": "Gliwic",
+            "country": "Poland",
+            "_id": "444444444",
+            "provenance": "Silesia",
+            "street": "Gliwicka",
+            "zipCode": "40-900"
+          },
+        "dateOfBirth": "1990-10-20",
+        "email": "polish@bebest.com",
+        "firstName": "Mateusz",
+        "_id": "44444444444",
+        "lastName": "Damian",
+        "middleName": "dam",
+        "phoneNumber": "+48 000 000 000",
+        "role": "TEACHER",
+        "subjects": [
+            {
+                "_id": "11111111111111",
+                "subject": "Polish",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              }
+        ],
+        "username": "polishteacher"
+      },
+      {
+        "address":     {
+            "building": "4",
+            "apartment": "C",
+            "city": "Sharm El-Sheikh",
+            "country": "Egypt",
+            "_id": "111111111",
+            "provenance": "South sinai",
+            "street": "Red Sea Street",
+            "zipCode": "4444"
+          },
+        "dateOfBirth": "1985-01-25",
+        "email": "studentwo@learning.com",
+        "firstName": "Muhammed",
+        "_id": "5555555555",
+        "lastName": "Adam",
+        "middleName": "Khaled",
+        "phoneNumber": "+48 111 111 111",
+        "role": "STUDENT",
+        "subjects": [
+            {
+                "_id": "666666666666",
+                "subject": "German",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              },
+              {
+                "_id": "777777777777777777",
+                "subject": "Italian",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              },
+              {
+                "_id": "88888888888888",
+                "subject": "Spanesh",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              }
+        ],
+        "username": "studentwo"
+      },
+      {
+        "address": {
+            "building": "2",
+            "apartment": "A",
+            "city": "Żory",
+            "country": "Poland",
+            "_id": "333333333",
+            "provenance": "Silesia",
+            "street": "Żory",
+            "zipCode": "4444"
+          },
+        "dateOfBirth": "1980-01-25",
+        "email": "studentthree@learning.com",
+        "firstName": "Emilia",
+        "_id": "666666666666",
+        "lastName": "Golowkin",
+        "middleName": "Kania",
+        "phoneNumber": "+48 000 000 000",
+        "role": "STUDENT",
+        "subjects": [
+            {
+                "_id": "11111111111111",
+                "subject": "Polish",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              },
+              {
+                "_id": "33333333333333333",
+                "subject": "English",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              },
+              {
+                "_id": "666666666666",
+                "subject": "German",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              }
+        ],
+        "username": "emilia"
+      },
+      {
+        "address": {
+            "building": "111",
+            "apartment": "8C",
+            "city": "Katowice",
+            "country": "Poland",
+            "_id": "222222222",
+            "provenance": "Silesia",
+            "street": "Gliwicka",
+            "zipCode": "40-855"
+          },
+        "dateOfBirth": "1995-04-15",
+        "email": "studentfour@learning.com",
+        "firstName": "studentfour",
+        "_id": "7777777777777",
+        "lastName": "student",
+        "middleName": "language",
+        "phoneNumber": "+48 555 555 555",
+        "role": "STUDENT",
+        "subjects": [
+            {
+                "_id": "444444444444444",
+                "subject": "Russian",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              },
+              {
+                "_id": "555555555555555555",
+                "subject": "Korean",
+                "description": {
+                  "EN": "English Description",
+                  "PL": "Polish Description"
+                }
+              }
+        ],
+        "username": "studentfour"
+      },
+      {
+        "address": {
+            "building": "8",
+            "apartment": "28C",
+            "city": "Gliwic",
+            "country": "Poland",
+            "_id": "444444444",
+            "provenance": "Silesia",
+            "street": "Gliwicka",
+            "zipCode": "40-900"
+          },
+        "dateOfBirth": "1990-10-20",
+        "email": "parent@bebest.com",
+        "firstName": "Jakub",
+        "_id": "88888888888",
+        "lastName": "Mateusz",
+        "middleName": "damian",
+        "phoneNumber": "+48 444 000 333",
+        "role": "PARENT",
+        "username": "parent",
+        "users": [
+            {
+                "address": {
+                    "building": "111",
+                    "apartment": "8C",
+                    "city": "Katowice",
+                    "country": "Poland",
+                    "_id": "222222222",
+                    "provenance": "Silesia",
+                    "street": "Gliwicka",
+                    "zipCode": "40-855"
+                  },
+                "dateOfBirth": "1995-04-15",
+                "email": "studentfour@learning.com",
+                "firstName": "studentfour",
+                "_id": "7777777777777",
+                "lastName": "student",
+                "middleName": "language",
+                "phoneNumber": "+48 555 555 555",
+                "role": "STUDENT",
+                "subjects": [
+                    {
+                        "_id": "444444444444444",
+                        "subject": "Russian",
+                        "description": {
+                          "EN": "English Description",
+                          "PL": "Polish Description"
+                        }
+                      },
+                      {
+                        "_id": "555555555555555555",
+                        "subject": "Korean",
+                        "description": {
+                          "EN": "English Description",
+                          "PL": "Polish Description"
+                        }
+                      }
+                ],
+                "username": "studentfour"
+              }
+        ]
+      }
+]
