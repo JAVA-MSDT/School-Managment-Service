@@ -1,7 +1,7 @@
 package com.bebestlang.bebest.service.user;
 
 import com.bebestlang.bebest.dto.user.AddressDto;
-import com.bebestlang.bebest.exception.AddressException;
+import com.bebestlang.bebest.exception.user.AddressException;
 import com.bebestlang.bebest.mapper.user.AddressMapper;
 import com.bebestlang.bebest.repository.user.AddressRepository;
 import lombok.RequiredArgsConstructor;
@@ -41,7 +41,7 @@ public class AddressService {
     }
 
     private Mono<AddressDto> getValidAddressDto(AddressDto returnedAddressDto, AddressDto addressDtoToUpdate) {
-        if(returnedAddressDto.getId().equals(addressDtoToUpdate.getId())){
+        if (returnedAddressDto.getId().equals(addressDtoToUpdate.getId())) {
             return Mono.just(addressDtoToUpdate);
         }
         throw new RuntimeException("Address to be Update & Address from DB are different");

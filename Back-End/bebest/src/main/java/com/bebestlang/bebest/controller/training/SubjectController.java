@@ -1,7 +1,7 @@
-package com.bebestlang.bebest.controller.subject;
+package com.bebestlang.bebest.controller.training;
 
-import com.bebestlang.bebest.dto.subject.SubjectDto;
-import com.bebestlang.bebest.service.subject.SubjectService;
+import com.bebestlang.bebest.dto.training.SubjectDto;
+import com.bebestlang.bebest.service.training.SubjectService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.CrossOrigin;

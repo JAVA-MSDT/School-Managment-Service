@@ -4,9 +4,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.bebestlang.bebest.dto.subject.SubjectDto;
+import com.bebestlang.bebest.dto.training.SubjectDto;
 import com.bebestlang.bebest.dto.user.UserDto;
-import com.bebestlang.bebest.modal.subject.Subject;
+import com.bebestlang.bebest.modal.training.Subject;
 import com.bebestlang.bebest.modal.user.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -23,7 +23,7 @@ public interface UserMapper {
 
     @Named("toSubjectSet")
     default Set<Subject> toSubjectSet(Set<SubjectDto> subjects) {
-        if(subjects == null) {
+        if (subjects == null) {
             return Collections.emptySet();
         }
         Set<Subject> subjectSet = new HashSet<>();
@@ -36,7 +36,7 @@ public interface UserMapper {
 
     @Named("toSubjectDtoSet")
     default Set<SubjectDto> toSubjectDtoSet(Set<Subject> subjects) {
-        if(subjects == null) {
+        if (subjects == null) {
             return Collections.emptySet();
         }
 

@@ -1,7 +1,6 @@
 package com.bebestlang.bebest.controller.user;
 
 import com.bebestlang.bebest.dto.user.UserDto;
-import com.bebestlang.bebest.exception.UserException;
 import com.bebestlang.bebest.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

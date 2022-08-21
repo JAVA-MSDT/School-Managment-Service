@@ -1,4 +1,4 @@
-package com.bebestlang.bebest.exception;
+package com.bebestlang.bebest.exception.training;
 
 public class SubjectException extends Exception {
 

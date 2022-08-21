@@ -1,7 +1,6 @@
 package com.bebestlang.bebest.controller.user;
 
 import com.bebestlang.bebest.dto.user.AddressDto;
-import com.bebestlang.bebest.exception.AddressException;
 import com.bebestlang.bebest.service.user.AddressService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -41,7 +40,7 @@ public class AddressController {
     }
 
     @PutMapping("/{id}")
-    public Mono<AddressDto> updateAddressDto(@RequestBody AddressDto addressDto,@PathVariable("id") String id) {
+    public Mono<AddressDto> updateAddressDto(@RequestBody AddressDto addressDto, @PathVariable("id") String id) {
         return addressService.updateAddress(addressDto, id);
     }
 }

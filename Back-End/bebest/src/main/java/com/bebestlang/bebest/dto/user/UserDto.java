@@ -3,7 +3,7 @@ package com.bebestlang.bebest.dto.user;
 import java.time.LocalDate;
 import java.util.Set;
 
-import com.bebestlang.bebest.dto.subject.SubjectDto;
+import com.bebestlang.bebest.dto.training.SubjectDto;
 import com.bebestlang.bebest.modal.user.Role;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

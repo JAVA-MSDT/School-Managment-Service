@@ -1,9 +1,9 @@
-package com.bebestlang.bebest.service.subject;
+package com.bebestlang.bebest.service.training;
 
-import com.bebestlang.bebest.dto.subject.SubjectDto;
-import com.bebestlang.bebest.exception.SubjectException;
-import com.bebestlang.bebest.mapper.subject.SubjectMapper;
-import com.bebestlang.bebest.repository.subject.SubjectRepository;
+import com.bebestlang.bebest.dto.training.SubjectDto;
+import com.bebestlang.bebest.exception.training.SubjectException;
+import com.bebestlang.bebest.mapper.training.SubjectMapper;
+import com.bebestlang.bebest.repository.training.SubjectRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

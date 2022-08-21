@@ -1,4 +1,6 @@
-package com.bebestlang.bebest.modal.subject;
+package com.bebestlang.bebest.modal.training;
+
+import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,5 +21,5 @@ public class Subject {
 
     private String subject;
 
-    private String description;
+    private Map<String, String> description;
 }

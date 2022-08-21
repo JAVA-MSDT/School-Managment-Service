@@ -3,7 +3,7 @@ package com.bebestlang.bebest.modal.user;
 import java.time.LocalDate;
 import java.util.Set;
 
-import com.bebestlang.bebest.modal.subject.Subject;
+import com.bebestlang.bebest.modal.training.Subject;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -45,6 +45,5 @@ public class User {
     private Set<Subject> subjects;
 
     private Set<User> users;
-
 
 }

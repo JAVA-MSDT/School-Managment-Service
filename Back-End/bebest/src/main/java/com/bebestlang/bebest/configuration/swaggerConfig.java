@@ -15,6 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class swaggerConfig {
+
     @Bean
     public Docket swaggerConfiguration() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -26,7 +27,8 @@ public class swaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        Contact contact = new Contact("Ahmed Samy", "https://www.linkedin.com/in/java-msdt/", "serenitydiver@hotmail.com");
+        Contact contact = new Contact("Ahmed Samy", "https://www.linkedin.com/in/java-msdt/",
+                "serenitydiver@hotmail.com");
         return new ApiInfo(
                 "Be Best Language School",
                 "Api to work with Be Best Language School",

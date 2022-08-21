@@ -1,7 +1,7 @@
-package com.bebestlang.bebest.mapper.subject;
+package com.bebestlang.bebest.mapper.training;
 
-import com.bebestlang.bebest.dto.subject.SubjectDto;
-import com.bebestlang.bebest.modal.subject.Subject;
+import com.bebestlang.bebest.dto.training.SubjectDto;
+import com.bebestlang.bebest.modal.training.Subject;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

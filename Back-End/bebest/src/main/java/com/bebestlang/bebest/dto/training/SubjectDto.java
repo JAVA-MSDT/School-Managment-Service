@@ -1,4 +1,6 @@
-package com.bebestlang.bebest.dto.subject;
+package com.bebestlang.bebest.dto.training;
+
+import java.util.Map;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -20,6 +22,10 @@ public class SubjectDto {
     @ApiModelProperty(value = "Subject", example = "Arabic, Polish, English, etc")
     private String subject;
 
-    @ApiModelProperty(value = "Subject description", example = "Arabic is a language mostly spoken in Middle East, but not only,,,,,")
-    private String description;
+    @ApiModelProperty(value = "Subject description", example = "\"description\": {\n" +
+            "\"EN\": \"English Description\",\n" +
+            "\"PL\": \"Polish Description\"\n" +
+            "}",
+            notes = "Map object, Key is the Language shortcut & Value is the description in that language ")
+    private Map<String, String> description;
 }
