@@ -1,8 +1,11 @@
 package com.bebestlang.bebest.exception.user;
 
-public class AddressException extends Exception {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
-    public AddressException(String message) {
-        super(message);
+public class AddressException extends ResponseStatusException {
+
+    public AddressException(String message, HttpStatus httpStatus) {
+        super(httpStatus, message);
     }
 }

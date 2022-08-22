@@ -6,6 +6,7 @@ import com.bebestlang.bebest.mapper.user.UserMapper;
 import com.bebestlang.bebest.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -21,7 +22,8 @@ public class UserService {
 
     public Mono<UserDto> findUserById(String id) {
         return userRepository.findById(id)
-                .switchIfEmpty(Mono.error(new UserException(String.format("User by the id:: %s Not Found", id))))
+                .switchIfEmpty(Mono.error(
+                        new UserException(String.format("User by the id:: %s Not Found", id), HttpStatus.NOT_FOUND)))
                 .map(userMapper::toUserDto);
     }
 

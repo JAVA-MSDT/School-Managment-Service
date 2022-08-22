@@ -6,6 +6,7 @@ import com.bebestlang.bebest.mapper.training.TrainingMapper;
 import com.bebestlang.bebest.repository.training.TrainingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -21,7 +22,8 @@ public class TrainingService {
 
     public Mono<TrainingDto> findTrainingById(String id) {
         return trainingRepository.findById(id)
-                .switchIfEmpty(Mono.error(new TrainingException(String.format("Training with Id:: %s not found ", id))))
+                .switchIfEmpty(Mono.error(new TrainingException(String.format("Training with Id:: %s not found ", id),
+                        HttpStatus.NOT_FOUND)))
                 .map(trainingMapper::toTrainingDto);
     }
 

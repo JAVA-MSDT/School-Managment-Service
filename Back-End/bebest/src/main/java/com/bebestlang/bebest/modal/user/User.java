@@ -9,7 +9,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -28,7 +27,7 @@ public class User {
 
     private String lastName;
 
-    @Indexed(unique = true)
+    // @Indexed(unique = true)
     private String username;
 
     // @Indexed(unique = true)

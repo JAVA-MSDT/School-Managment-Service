@@ -6,6 +6,7 @@ import com.bebestlang.bebest.mapper.user.AddressMapper;
 import com.bebestlang.bebest.repository.user.AddressRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -21,7 +22,8 @@ public class AddressService {
 
     public Mono<AddressDto> findAddressById(String id) {
         return addressRepository.findById(id).switchIfEmpty(
-                        Mono.error(new AddressException(String.format("Address with the id:: %s Not found", id))))
+                        Mono.error(new AddressException(String.format("Address with the id:: %s Not found", id),
+                                HttpStatus.NOT_FOUND)))
                 .map(addressMapper::toAddressDto);
     }
 

@@ -1,9 +1,12 @@
 package com.bebestlang.bebest.exception.training;
 
-public class TrainingException extends Exception {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
-    public TrainingException(String message) {
-        super(message);
+public class TrainingException extends ResponseStatusException {
+
+    public TrainingException(String message, HttpStatus httpStatus) {
+        super(httpStatus, message);
     }
 
 }

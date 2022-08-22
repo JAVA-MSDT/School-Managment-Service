@@ -1,8 +1,11 @@
 package com.bebestlang.bebest.exception.user;
 
-public class UserException extends Exception {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
-    public UserException(String message) {
-        super(message);
+public class UserException extends ResponseStatusException {
+
+    public UserException(String message, HttpStatus httpStatus) {
+        super(httpStatus, message);
     }
 }
