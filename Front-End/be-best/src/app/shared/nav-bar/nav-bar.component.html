@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4 px-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0);" [routerLink]="['/']"
+      ><span class=""><img src="assets/images/logo.png" width="100px" height="100px"/></span>
+      {{ "dc" | translate }}</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="javascript:void(0);"
+            [routerLink]="['']"
+            >{{ "home" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0);"
+            [routerLink]="['/about-us']"
+            >{{ "about.us" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0);"
+            [routerLink]="['/diver-zone']"
+            >{{ "diver.zone" | translate }}</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="{{ 'search' | translate }}"
+          attr.aria-label="{{ 'search' | translate }}"
+        />
+        <button class="btn btn-outline-success me-2" type="submit">
+          {{ "search" | translate }}
+        </button>
+      </form>
+      <div class="d-flex align-items-around">
+        <div class="">
+        <button
+          class="btn btn-outline-primary me-2"
+          type="submit"
+          [routerLink]="['/login']"
+        >
+          {{ "login" | translate }}
+        </button>
+      </div>
+        <div class="dropdown-center ">
+          <button
+            class="btn btn-info dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ "language" | translate }}
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a
+                class="dropdown-item active"
+                href="javascript:void(0);"
+                (click)="useLanguage('en')"
+                >{{ "en" | translate }}</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="javascript:void(0);"
+                (click)="useLanguage('ar')"
+                >{{ "ar" | translate }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
