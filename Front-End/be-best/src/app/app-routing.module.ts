@@ -4,6 +4,7 @@ import { ROUTER_PATH } from './app-config/router-path-const';
 import { AboutUsComponent } from './public-pages/about-us/about-us.component';
 import { LoginComponent } from './public-pages/login/login.component';
 import { MainPageComponent } from './public-pages/main-page/main-page.component';
+import { TrainingZoneComponent } from './public-pages/training-zone/training-zone.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
   {
     path: ROUTER_PATH.aboutUs,
     component: AboutUsComponent
+  },  {
+    path: ROUTER_PATH.trainingArea,
+    component: TrainingZoneComponent
   },
   {
     path: ROUTER_PATH.login,

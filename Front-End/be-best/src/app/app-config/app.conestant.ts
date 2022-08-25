@@ -18,3 +18,7 @@ export const LANG_CONSTANTS = {
   export const AUTH_CONSTANTS = {
     JWT_KEY: 'contact-manager-jwt',
   };
+
+  export const API_NAME = {
+    TRAININGS: 'trainings',
+  };

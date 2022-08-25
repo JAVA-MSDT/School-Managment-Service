@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4 px-2">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0);" [routerLink]="['/']"
-      ><span class=""><img src="assets/images/logo.png" width="100px" height="100px"/></span>
-      {{ "dc" | translate }}</a
+      ><span class=""><img src=""/></span>
+      {{ "be.best" | translate }}</a
     >
     <button
       class="navbar-toggler"
@@ -38,22 +38,11 @@
           <a
             class="nav-link"
             href="javascript:void(0);"
-            [routerLink]="['/diver-zone']"
-            >{{ "diver.zone" | translate }}</a
+            [routerLink]="['/training-area']"
+            >{{ "training.area" | translate }}</a
           >
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="{{ 'search' | translate }}"
-          attr.aria-label="{{ 'search' | translate }}"
-        />
-        <button class="btn btn-outline-success me-2" type="submit">
-          {{ "search" | translate }}
-        </button>
-      </form>
       <div class="d-flex align-items-around">
         <div class="">
         <button
@@ -61,7 +50,7 @@
           type="submit"
           [routerLink]="['/login']"
         >
-          {{ "login" | translate }}
+          {{ "student.area" | translate }}
         </button>
       </div>
         <div class="dropdown-center ">
@@ -86,8 +75,8 @@
               <a
                 class="dropdown-item"
                 href="javascript:void(0);"
-                (click)="useLanguage('ar')"
-                >{{ "ar" | translate }}</a
+                (click)="useLanguage('pl')"
+                >{{ "pl" | translate }}</a
               >
             </li>
           </ul>
