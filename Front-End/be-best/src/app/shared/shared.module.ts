@@ -11,6 +11,7 @@ import {
   TranslateModule,
   TranslateService,
 } from '@ngx-translate/core';
+import { DescriptionTranslatorPipe } from '../pipes/description-translator.pipe';
 
 // loader module
 export function HttpLoaderFactory(http: HttpClient) {
@@ -18,7 +19,12 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [NavBarComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    NavBarComponent,
+    HeaderComponent,
+    FooterComponent,
+    DescriptionTranslatorPipe,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -31,7 +37,13 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  exports: [HeaderComponent, FooterComponent, TranslateModule, HttpClientModule],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    TranslateModule,
+    HttpClientModule,
+    DescriptionTranslatorPipe,
+  ],
   providers: [TranslateService],
 })
 export class SharedModule {}

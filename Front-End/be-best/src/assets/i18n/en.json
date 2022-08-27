@@ -2,13 +2,13 @@
     "be.best": "Be Best Language",
     "home": "Home",
     "about.us": "About Us",
-    "training.area": "Training Area",
     "login": "Login",
     "logout": "Logout",
     "search": "Search",
     "language": "language",
     "pl": "PL",
     "en": "EN",
-    "training" : "Trainings",
-    "student.area": "Student Area"
+    "training" : "Courses",
+    "student.area": "Student Area",
+    "check.training": "Check Training"
 }

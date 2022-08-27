@@ -5,22 +5,33 @@ import { LANG_CONSTANTS } from 'src/app/app-config/app.conestant';
 @Component({
   selector: 'b-best-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.sass']
+  styleUrls: ['./nav-bar.component.sass'],
 })
 export class NavBarComponent implements OnInit {
-
-  constructor(
-    private translate: TranslateService,
-  ) {
-    translate.setDefaultLang(LANG_CONSTANTS.EN);
-    this.useLanguage(LANG_CONSTANTS.EN);
+  constructor(private translate: TranslateService) {
+    this.setLanguageOnStartup();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   useLanguage(lang: string): void {
     this.translate.use(lang);
+    this.setLocalStorageLanguage(lang);
   }
-  
+
+  setLocalStorageLanguage(language: string): void {
+    localStorage.setItem(LANG_CONSTANTS.LANG_ATTR, language);
+  }
+
+  setLanguageOnStartup(): void {
+    const lang = localStorage.getItem(LANG_CONSTANTS.LANG_ATTR);
+    if (lang) {
+      this.translate.setDefaultLang(lang);
+      this.useLanguage(lang);
+    } else {
+      this.translate.setDefaultLang(LANG_CONSTANTS.EN);
+      this.useLanguage(LANG_CONSTANTS.EN);
+      this.setLocalStorageLanguage(LANG_CONSTANTS.EN);    
+    }
+  }
 }

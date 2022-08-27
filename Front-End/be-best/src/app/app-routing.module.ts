@@ -4,28 +4,34 @@ import { ROUTER_PATH } from './app-config/router-path-const';
 import { AboutUsComponent } from './public-pages/about-us/about-us.component';
 import { LoginComponent } from './public-pages/login/login.component';
 import { MainPageComponent } from './public-pages/main-page/main-page.component';
-import { TrainingZoneComponent } from './public-pages/training-zone/training-zone.component';
+import { TrainingZoneComponent } from './public-pages/trainings/training-zone/training-zone.component';
+import { TrainingComponent } from './public-pages/trainings/training/training.component';
 
 const routes: Routes = [
   {
     path: ROUTER_PATH.home,
-    component: MainPageComponent
+    component: MainPageComponent,
   },
   {
     path: ROUTER_PATH.aboutUs,
-    component: AboutUsComponent
-  },  {
-    path: ROUTER_PATH.trainingArea,
-    component: TrainingZoneComponent
+    component: AboutUsComponent,
+  },
+  {
+    path: ROUTER_PATH.trainings,
+    component: TrainingZoneComponent,
+  },
+  {
+    path: ROUTER_PATH.trainings + ROUTER_PATH.contextPath + ROUTER_PATH.id,
+    component: TrainingComponent,
   },
   {
     path: ROUTER_PATH.login,
-    component: LoginComponent
-  }
+    component: LoginComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

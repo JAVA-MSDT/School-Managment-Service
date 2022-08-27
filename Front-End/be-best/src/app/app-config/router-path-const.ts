@@ -3,7 +3,7 @@ export const ROUTER_PATH = {
     home: '',
     login: 'login',
     aboutUs: 'about-us',
-    trainingArea: 'training-area',
+    trainings: 'trainings',
     id: ':id',
     invalidPage: '**'
 };
