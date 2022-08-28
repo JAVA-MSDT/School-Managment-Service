@@ -10,8 +10,10 @@
     "en": "EN",
     "training" : "Courses",
     "student.area": "Student Area",
-    "check.training": "Check Course",
+    "view.training": "View Course",
     "about.us.title": "Be Best School of Foreign Languages",
     "our.team": "Our Team",
-    "who.we.are": "Who we are......"
+    "who.we.are": "Who we are......",
+    "view.teacher": "View Teacher",
+    "our.topics": "Our Courses Topics"
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { API_NAME } from 'src/app/app-config/app.conestant';
 import { ROUTER_PATH } from 'src/app/app-config/router-path-const';
 import { PublicInfo } from 'src/app/domains/shared/public-info';
+import { Subject } from 'src/app/domains/training/subject';
 import { User } from 'src/app/domains/user/user';
 import { ApiService } from 'src/app/service/api/api.service';
 
@@ -21,14 +22,19 @@ export class AboutUsComponent implements OnInit {
     ROUTER_PATH.contextPath +
     API_NAME.TEACHERS;
 
+    readonly subjectsApi =
+    API_NAME.PUBLIC + ROUTER_PATH.contextPath + API_NAME.SUBJECTS;
+
   publicInfo: PublicInfo = <PublicInfo>{};
   teachers: User[] = [];
+  subjects: Subject[] = [];
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.getPublicInfo();
     this.getTeachers();
+    this.getSubjects();
   }
 
   getPublicInfo(): void {
@@ -46,6 +52,14 @@ export class AboutUsComponent implements OnInit {
       console.log(this.teachers);
     });
   }
+
+  getSubjects(): void {
+    this.apiService.get<Subject[]>(this.subjectsApi).subscribe((subjects) => {
+      this.subjects = subjects;
+      console.log(this.subjects);
+    });
+  }
+
   goToTeacherPage(teacherId: string): void {
     console.log(teacherId);
   }
