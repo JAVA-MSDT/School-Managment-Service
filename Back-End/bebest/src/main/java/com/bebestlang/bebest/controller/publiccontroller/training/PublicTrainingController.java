@@ -1,4 +1,4 @@
-package com.bebestlang.bebest.controller.training;
+package com.bebestlang.bebest.controller.publiccontroller.training;
 
 import com.bebestlang.bebest.dto.training.TrainingDto;
 import com.bebestlang.bebest.service.training.TrainingService;
@@ -15,33 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@RequestMapping("api/trainings")
+@RequestMapping("api/pu/trainings")
 @RestController
 @RequiredArgsConstructor
 @Log4j2
 @CrossOrigin(origins = "*")
-public class TrainingController {
+public class PublicTrainingController {
 
     private final TrainingService trainingService;
 
     @GetMapping("/{id}")
-    public Mono<TrainingDto> findTrainingById(@PathVariable("id") String id) {
-        return trainingService.findTrainingById(id);
+    public Mono<TrainingDto> findTrainingByIdForPublicAPI(@PathVariable("id") String id) {
+        return trainingService.findTrainingByIdForPublicAPI(id);
     }
 
     @GetMapping
-    public Flux<TrainingDto> findAllTraining() {
-        return trainingService.findAllTraining();
-    }
-
-    @PostMapping
-    public Mono<TrainingDto> saveTraining(@RequestBody TrainingDto trainingDto) {
-        return trainingService.saveTraining(trainingDto);
-    }
-
-    @PutMapping("/{id}")
-    public Mono<TrainingDto> updateTraining(@RequestBody TrainingDto trainingDto, @PathVariable("id") String id) {
-        return trainingService.updateTraining(trainingDto, id);
+    public Flux<TrainingDto> findAllTrainingForPublicAPI() {
+        return trainingService.findAllTrainingForPublicAPI();
     }
 
 }

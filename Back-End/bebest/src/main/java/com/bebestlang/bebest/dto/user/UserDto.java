@@ -1,6 +1,7 @@
 package com.bebestlang.bebest.dto.user;
 
 import java.time.LocalDate;
+import java.util.Map;
 import java.util.Set;
 
 import com.bebestlang.bebest.dto.training.SubjectDto;
@@ -49,12 +50,19 @@ public class UserDto {
     private AddressDto address;
 
     @ApiModelProperty(value = "User role", example = "ADMIN, TEACHER, STUDENT or PARENT")
-    private Role role;
+    private Set<Role> role;
 
     @ApiModelProperty(value = "User Subjects", example = "Set of subjects", dataType = "array")
     private Set<SubjectDto> subjects;
 
     @ApiModelProperty(value = "Users Set", example = "Set of Users", notes = "Could be Children for a Parent role, Students for Teacher or Teachers for Students")
     private Set<UserDto> users;
+
+    @ApiModelProperty(value = "User Bio", example = "\"bio\": {\n" +
+            "\"EN\": \"English bio\",\n" +
+            "\"PL\": \"Polish bio\"\n" +
+            "}",
+            notes = "Map object, Key is the Language shortcut & Value is the bio in that language ")
+    private Map<String, String> bio;
 
 }

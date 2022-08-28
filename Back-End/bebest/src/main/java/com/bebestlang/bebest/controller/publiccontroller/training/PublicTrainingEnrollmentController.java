@@ -1,4 +1,4 @@
-package com.bebestlang.bebest.controller.training;
+package com.bebestlang.bebest.controller.publiccontroller.training;
 
 import com.bebestlang.bebest.dto.training.TrainingEnrollmentDto;
 import com.bebestlang.bebest.service.training.TrainingEnrollmentService;
@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@RequestMapping("api/training-enrollments")
+@RequestMapping("api/pu/training-enrollments")
 @RestController
 @RequiredArgsConstructor
 @Log4j2
 @CrossOrigin(origins = "*")
-public class TrainingEnrollmentController {
+public class PublicTrainingEnrollmentController {
 
     private final TrainingEnrollmentService trainingEnrollmentService;
 
@@ -37,17 +37,6 @@ public class TrainingEnrollmentController {
     @GetMapping("/training-enrolments/training/{trainingId}")
     public Flux<TrainingEnrollmentDto> findAllTrainingByTrainingId(@PathVariable("trainingId") String trainingId) {
         return trainingEnrollmentService.findAllTrainingByTrainingId(trainingId);
-    }
-
-    @PostMapping
-    public Mono<TrainingEnrollmentDto> saveTraining(@RequestBody TrainingEnrollmentDto trainingDto) {
-        return trainingEnrollmentService.saveTrainingEnrollment(trainingDto);
-    }
-
-    @PutMapping("/{id}")
-    public Mono<TrainingEnrollmentDto> updateTraining(@RequestBody TrainingEnrollmentDto trainingDto,
-            @PathVariable("id") String id) {
-        return trainingEnrollmentService.updateTrainingEnrollment(trainingDto, id);
     }
 
 }

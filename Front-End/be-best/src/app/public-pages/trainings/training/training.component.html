@@ -32,8 +32,27 @@
         <span>Course Status:: </span> {{ training.trainingStatus }}
       </p>
     </div>
+    <div class="">
+      <p class="border rounded text-center p-2">
+        <span>Course Subject:: </span> {{ subject.description | descriptionTranslator }}
+      </p>
+      <p class="border rounded text-center p-2">
+        <span>Subject Title:: </span> {{ subject.subject }}
+      </p>
+      <p>{{ user.middleName | uppercase }}</p>
+    </div>
   </div>
-  <div class="col-md-3 py-2 border shadow rounded my-2 bg-light">Teacher</div>
+  <div class="col-md-3 py-2 border shadow rounded my-2 bg-light">
+    <h1 class="border rounded text-center p-2 shadow custom-lable">
+      {{ user.firstName }} {{ user.lastName }}
+    </h1>
+    <img
+      src="/assets/images/language.jpg"
+      class="img-fluid rounded mb-1 image"
+      alt="..."
+    />
+    <p>{{ user.subjects }}</p>
+  </div>
 </div>
 <div class="row p-4 mb-2 bg-light shadow rounded">
   <div class="col-12">Reviews</div>

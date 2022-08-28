@@ -11,15 +11,15 @@ export class DescriptionTranslatorPipe implements PipeTransform {
   description!: string;
    
   
-  transform(value: Description, ...args: unknown[]): unknown {
+  transform(value: Description, ...args: unknown[]): string {
     const lang: string | null = localStorage.getItem(LANG_CONSTANTS.LANG_ATTR);
     
     if(lang === LANG_CONSTANTS.EN) {
-      this.description = value['EN'];
+      this.description = value["EN"];
     }
 
     if(lang === LANG_CONSTANTS.PL) {
-      this.description = value['PL'];
+      this.description = value["PL"];
     }
     return this.description;
   }

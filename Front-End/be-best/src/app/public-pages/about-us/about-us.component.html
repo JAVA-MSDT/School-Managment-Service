@@ -1,1 +1,73 @@
-<h1>About Us Page</h1>
+<div class="custom-jumbotron p-5 bg-primary text-dark row h-50">
+  <h1>{{ 'who.we.are' | translate }}</h1>
+</div>
+<div class="row bg-dark text-light">
+    <h2 class="w-100 p-4">{{ 'about.us.title' | translate}}</h2>
+</div>
+
+<div class="container p-4">
+  <div class="row p-4 custom-lable shadow">
+    <div class="col-md-9 border-sm-end">
+        <p class="indent-40 lh-sm fs-4">
+            {{publicInfo.aboutUsIntro | descriptionTranslator}}
+        </p>
+    </div>
+    <div class="col-md-3 d-flex justify-content-center align-item-center">
+        <img
+        src="/assets/images/learning.jpg"
+        class="img-fluid rounded shadow"
+        alt="..."
+      />
+    </div>
+  </div>
+</div>
+
+<div class="row bg-dark text-light text-center">
+    <h2 class="w-100 p-4">{{ 'our.team' | translate}}</h2>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div
+        class="container-fluid col-12 col-md-5 m-2 course-container bg-light"
+        *ngFor="let teacher of teachers"
+      >
+        <div class="row">
+          <div
+            class="col-xxl-6 d-flex justify-content-center align-items-stretch flex-column py-2"
+          >
+            <img
+              src="/assets/images/language.jpg"
+              class="img-fluid rounded mb-1 image"
+              alt="..."
+            />
+  
+            <div
+              class="mt-auto w-100 d-flex justify-content-center align-items-center border-bottom border-top custom-lable rounded"
+            >
+              <h2>Share to.....</h2>
+            </div>
+          </div>
+          <div
+            class="col-xxl-6 d-flex justify-content-center align-items-stretch flex-column p-4 border-start"
+          >
+            <div>
+              <h3>{{ teacher.firstName }}</h3>
+            </div>
+            <div class="my-4">
+              <p class="m-0">
+                {{ teacher.bio | descriptionTranslator }}
+              </p>
+              <p class="">{{ teacher.username | lowercase }}</p>
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-lg me-4 ms-2" (click)="goToTeacherPage('ID')">
+                {{ "check.training" | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

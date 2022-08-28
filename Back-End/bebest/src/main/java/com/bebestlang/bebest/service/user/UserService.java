@@ -3,6 +3,7 @@ package com.bebestlang.bebest.service.user;
 import com.bebestlang.bebest.dto.user.UserDto;
 import com.bebestlang.bebest.exception.user.UserException;
 import com.bebestlang.bebest.mapper.user.UserMapper;
+import com.bebestlang.bebest.modal.user.Role;
 import com.bebestlang.bebest.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -57,4 +58,26 @@ public class UserService {
         }
         throw new RuntimeException("User to be Updated & User from DB are different");
     }
+
+    ////////////////////////////////////////
+    // =========== PUBLIC API =========== //
+    ////////////////////////////////////////
+
+    public Mono<UserDto> findUserByIdForPublicAPI(String id) {
+        return userRepository.findById(id)
+                .switchIfEmpty(Mono.error(
+                        new UserException(String.format("User by the id:: %s Not Found", id), HttpStatus.NOT_FOUND)))
+                .map(user -> userMapper.toUserDtoForPublicAPI(user, new UserDto()));
+    }
+
+    public Flux<UserDto> findAllUsersForPublicAPI() {
+        return userRepository.findAll()
+                .map(user -> userMapper.toUserDtoForPublicAPI(user, new UserDto()));
+    }
+
+    public Flux<UserDto> findAllUsersForPublicAPIWithTeacherRole() {
+        return userRepository.findAllUserByRole(Role.TEACHER.toString())
+                .map(user -> userMapper.toUserDtoForPublicAPI(user, new UserDto()));
+    }
+
 }

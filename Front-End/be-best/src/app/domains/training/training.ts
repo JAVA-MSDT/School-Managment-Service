@@ -9,4 +9,5 @@ export interface Training {
     endDate: string;
     trainingStatus: string;
     description: Description;
+    studentsIds: [];
   }

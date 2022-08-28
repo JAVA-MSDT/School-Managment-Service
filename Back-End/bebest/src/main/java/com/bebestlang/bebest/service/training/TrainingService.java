@@ -50,4 +50,20 @@ public class TrainingService {
         throw new RuntimeException("Training to be Updated & Training from DB are different");
     }
 
+    ////////////////////////////////////////
+    // =========== PUBLIC API =========== //
+    ////////////////////////////////////////
+
+    public Mono<TrainingDto> findTrainingByIdForPublicAPI(String id) {
+        return trainingRepository.findById(id)
+                .switchIfEmpty(Mono.error(new TrainingException(String.format("Training with Id:: %s not found ", id),
+                        HttpStatus.NOT_FOUND)))
+                .map(trainingMapper::toTrainingDtoForPublicAPI);
+    }
+
+    public Flux<TrainingDto> findAllTrainingForPublicAPI() {
+        return trainingRepository.findAll()
+                .map(trainingMapper::toTrainingDtoForPublicAPI);
+    }
+
 }

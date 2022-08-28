@@ -1,4 +1,4 @@
-package com.bebestlang.bebest.controller.user;
+package com.bebestlang.bebest.controller.publiccontroller.user;
 
 import com.bebestlang.bebest.dto.user.AddressDto;
 import com.bebestlang.bebest.service.user.AddressService;
@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@RequestMapping("api/addresses")
+@RequestMapping("api/pu/addresses")
 @RestController
 @RequiredArgsConstructor
 @Log4j2
 @CrossOrigin(origins = "*")
-public class AddressController {
+public class PublicAddressController {
 
     private final AddressService addressService;
 
@@ -32,15 +32,5 @@ public class AddressController {
     @GetMapping
     public Flux<AddressDto> findAllAddressDto() {
         return addressService.findAllAddress();
-    }
-
-    @PostMapping
-    public Mono<AddressDto> saveAddress(@RequestBody AddressDto addressDto) {
-        return addressService.saveAddress(addressDto);
-    }
-
-    @PutMapping("/{id}")
-    public Mono<AddressDto> updateAddressDto(@RequestBody AddressDto addressDto, @PathVariable("id") String id) {
-        return addressService.updateAddress(addressDto, id);
     }
 }

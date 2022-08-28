@@ -1,12 +1,13 @@
+import { Description } from "../shared/map-string";
 import { Subject } from "../training/subject";
 import { Address } from "./address";
 import { Role } from "./role";
 
 export interface User {
     id?: string;
-    firstname: string;
-    middlename: string;
-    lastname: string;
+    firstName: string;
+    middleName: string;
+    lastName: string;
     username: string;
     email: string;
     phonenumber: string;
@@ -14,5 +15,6 @@ export interface User {
     address: Address;
     role: Role;
     subjects: Subject[];
-    users:User[];
+    users: User[];
+    bio: Description
   }

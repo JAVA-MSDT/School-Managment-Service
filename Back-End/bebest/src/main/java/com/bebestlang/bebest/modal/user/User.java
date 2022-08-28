@@ -1,6 +1,7 @@
 package com.bebestlang.bebest.modal.user;
 
 import java.time.LocalDate;
+import java.util.Map;
 import java.util.Set;
 
 import com.bebestlang.bebest.modal.training.Subject;
@@ -39,10 +40,12 @@ public class User {
 
     private Address address;
 
-    private Role role;
+    private Set<Role> role;
 
     private Set<Subject> subjects;
 
     private Set<User> users;
+
+    private Map<String, String> bio;
 
 }

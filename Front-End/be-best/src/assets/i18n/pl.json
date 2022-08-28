@@ -1,15 +1,17 @@
 {
     "be.best": "Be Best Język",
-    "home": "Home",
-    "about.us": "About Us",
-    "training.area": "Training Area",
-    "login": "Login",
-    "logout": "Logout",
-    "search": "Search",
-    "language": "language",
+    "home": "Strona główna",
+    "about.us": "O nas",
+    "login": "Zaloguj sie",
+    "logout": "Wyloguj",
+    "search": "Szukaj",
+    "language": "Języki",
     "pl": "PL",
     "en": "EN",
-    "training" : "Trainings",
+    "training" : "Kursy",
     "student.area": "Student Area",
-    "check.training": "Check Training"
+    "check.training": "Sprawdź kurs",
+    "about.us.title": "Be Best Szkoła Języków Obcych",
+    "our.team": "Nasz zespół",
+    "who.we.are": "Kim jesteśmy......"
 }
