@@ -15,10 +15,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel(description = "Subject Dto object")
+@ApiModel(description = "Public Info Dto object")
 public class PublicInfoDto {
 
-    @ApiModelProperty(value = "user id", example = "UUID4")
+    @ApiModelProperty(value = "Public Info id", example = "UUID4")
     private String id;
 
     @ApiModelProperty(value = "Public Info Dto About Us Intro", example = "\"aboutUsIntro\": {\n" +

@@ -40,7 +40,7 @@
           <div
             class="border-bottom border-top custom-lable rounded w-100 text-center mb-2"
           >
-            <h3>{{ teacher.firstName }}</h3>
+            <h3>{{ teacher.firstName }} {{ teacher.lastName }}</h3>
           </div>
           <div class="">
             <img
@@ -57,7 +57,7 @@
             <p class="m-0">
               {{ teacher.bio | descriptionTranslator }}
             </p>
-            <p class="">{{ teacher.username | lowercase }}</p>
+            <p class="">{{ teacher.username }}</p>
           </div>
           <div class="border-top pt-2">
             <button

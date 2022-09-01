@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-6"></div>
+  <div class="col-md-6 p-4">
+    <form class="border rounded p-4 shadow">
+      <div class="mb-3">
+        <label for="course" class="form-label">
+          {{ "language" | translate }} / {{ "course.name" | translate }}</label
+        >
+        <input type="text" class="form-control form-control-lg" id="course" />
+      </div>
+      <div class="mb-3">
+        <label for="fullname" class="form-label">
+          {{ "full.name" | translate }}</label
+        >
+        <input type="text" class="form-control form-control-lg" id="fullname" />
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-8">
+          <label for="phonenumber" class="form-label">{{
+            "phone.number" | translate
+          }}</label>
+          <input
+            type="phone"
+            class="form-control form-control-lg"
+            id="phonenumber"
+          />
+        </div>
+        <div class="col-sm-4">
+          <label for="phonenumber" class="form-label">{{
+            "age" | translate
+          }}</label>
+          <input
+            type="number"
+            class="form-control form-control-lg"
+            id="phonenumber"
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">{{ "email" | translate }}</label>
+        <input type="email" class="form-control form-control-lg" id="email" />
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="terms" />
+        <label class="form-check-label" for="terms">{{"read.terms" |  translate}}</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="feedback" />
+        <label class="form-check-label" for="feedback">{{"feedback.agreement" |  translate}}</label>
+      </div>
+      <button type="submit" class="btn btn-dark">
+        {{ "send" | translate }}
+      </button>
+    </form>
+  </div>
+</div>

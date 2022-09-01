@@ -9,12 +9,22 @@ import { LoginComponent } from './login/login.component';
 import { TrainingZoneComponent } from './trainings/training-zone/training-zone.component';
 import { TrainingComponent } from './trainings/training/training.component';
 import { SharedModule } from '../shared/shared.module';
+import { UserComponent } from './user/user.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
-const components = [MainPageComponent, AboutUsComponent, LoginComponent, TrainingZoneComponent, TrainingComponent];
+const components = [
+  MainPageComponent,
+  AboutUsComponent,
+  LoginComponent,
+  TrainingZoneComponent,
+  TrainingComponent,
+  UserComponent,
+  ContactUsComponent,
+];
 
 @NgModule({
   declarations: [...components],
-  imports: [CommonModule, BrowserModule, RouterModule, SharedModule ],
+  imports: [CommonModule, BrowserModule, RouterModule, SharedModule],
   exports: [...components],
 })
 export class PublicPagesModule {}
