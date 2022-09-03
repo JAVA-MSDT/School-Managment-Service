@@ -1,6 +1,28 @@
-<div class="row">
-  <div class="col-md-6"></div>
-  <div class="col-md-6 p-4">
+<div class="row p-4">
+  <div class="col-md-3 p-4">
+    <div class="mb-5">
+      <h2 class="contact-label">{{ "contact.details" | translate }}</h2>
+      <a class="contact-method" href="tel:+48663613772"
+        ><h4>(+48) 66 361 37 72</h4></a
+      >
+      <a class="contact-method text-break" href="mailto:biuro@be-best.pl"
+        ><h4>biuro@be-best.pl</h4></a
+      >
+    </div>
+    <div class="mb-5">
+      <h2 class="contact-label">{{ "opening.hours" | translate }}</h2>
+      <h4>{{ "open.time" | translate }}</h4>
+    </div>
+    <div class="mb-5">
+      <h2 class="contact-label">{{ "school.data" | translate }}</h2>
+      <h4 class="text-center">Be Best - Anna Kania</h4>
+      <h4 class="text-center">ul. Rybnicka 4/2 44 - 240 Żory</h4>
+      <h4 class="text-center">NIP: 651-162-19-47</h4>
+      <h4 class="text-center">Regon: 242615464</h4>
+    </div>
+  </div>
+  <div class="col-md-9 p-4">
+    <h4 class="mb-5">{{ "contact.us.message" | translate }}</h4>
     <form class="border rounded p-4 shadow">
       <div class="mb-3">
         <label for="course" class="form-label">
@@ -42,15 +64,27 @@
       </div>
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="terms" />
-        <label class="form-check-label" for="terms">{{"read.terms" |  translate}}</label>
+        <label class="form-check-label" for="terms">{{
+          "read.terms" | translate
+        }}</label>
       </div>
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="feedback" />
-        <label class="form-check-label" for="feedback">{{"feedback.agreement" |  translate}}</label>
+        <label class="form-check-label" for="feedback">{{
+          "feedback.agreement" | translate
+        }}</label>
       </div>
       <button type="submit" class="btn btn-dark">
         {{ "send" | translate }}
       </button>
     </form>
+  </div>
+</div>
+<div class="row p-4 bg-light border">
+  <div class="col-md-6">
+    Social Media Pages
+  </div>
+  <div class="col-md-6">
+    Google Map
   </div>
 </div>
