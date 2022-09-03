@@ -8,11 +8,14 @@ import { LANG_CONSTANTS } from 'src/app/app-config/app.conestant';
   styleUrls: ['./nav-bar.component.sass'],
 })
 export class NavBarComponent implements OnInit {
+  selectLang: string | null = "en";
   constructor(private translate: TranslateService) {
     this.setLanguageOnStartup();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+     // this.selectLang = localStorage.getItem(LANG_CONSTANTS.LANG_ATTR);
+  }
 
   useLanguage(lang: string): void {
     this.translate.use(lang);
@@ -33,5 +36,6 @@ export class NavBarComponent implements OnInit {
       this.useLanguage(LANG_CONSTANTS.EN);
       this.setLocalStorageLanguage(LANG_CONSTANTS.EN);    
     }
+    this.selectLang = lang;
   }
 }

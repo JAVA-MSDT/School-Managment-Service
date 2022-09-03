@@ -70,6 +70,10 @@
           >
             {{ "language" | translate }}
           </button>
+          <select class="form-select" aria-label="Default select example">
+            <option [attr.selected]="selectLang === 'en' ?  true : null" value="1">{{ "en" | translate }}</option>
+            <option [attr.selected]="selectLang === 'pl' ?  true : null" value="2">{{ "pl" | translate }}</option>
+          </select>
           <ul class="dropdown-menu dropdown-menu-dark">
             <li>
               <a
