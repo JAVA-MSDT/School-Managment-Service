@@ -1,3 +1,5 @@
+import { ROUTER_PATH } from './router-path-const';
+
 export const LANG_CONSTANTS = {
   LANG_ATTR: 'language',
   EN: 'en',
@@ -29,4 +31,24 @@ export const API_NAME = {
   USERS: 'users',
   PUBLIC_INFO: 'public-info',
   TEACHERS: 'teachers',
+};
+
+export const API_PATH_NAME = {
+  TRAININGS_PUBLIC_PATH:
+    API_NAME.PUBLIC +
+    ROUTER_PATH.contextPath +
+    API_NAME.TRAININGS +
+    ROUTER_PATH.contextPath,
+
+  SUBJECTS_PUBLIC_PATH:
+    API_NAME.PUBLIC +
+    ROUTER_PATH.contextPath +
+    API_NAME.SUBJECTS +
+    ROUTER_PATH.contextPath,
+
+  USERS_PUBLIC_PATH:
+    API_NAME.PUBLIC +
+    ROUTER_PATH.contextPath +
+    API_NAME.USERS +
+    ROUTER_PATH.contextPath,
 };

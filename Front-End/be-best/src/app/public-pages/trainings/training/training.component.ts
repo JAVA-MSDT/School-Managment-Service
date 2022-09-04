@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { API_NAME } from 'src/app/app-config/app.conestant';
-import { ROUTER_PATH } from 'src/app/app-config/router-path-const';
+import { API_PATH_NAME } from 'src/app/app-config/app.conestant';
 import { Subject } from 'src/app/domains/training/subject';
 import { Training } from 'src/app/domains/training/training';
 import { User } from 'src/app/domains/user/user';
@@ -13,34 +12,17 @@ import { ApiService } from 'src/app/service/api/api.service';
   styleUrls: ['./training.component.sass'],
 })
 export class TrainingComponent implements OnInit {
-  readonly trainingsApi =
-    API_NAME.PUBLIC +
-    ROUTER_PATH.contextPath +
-    API_NAME.TRAININGS +
-    ROUTER_PATH.contextPath;
 
-  readonly subjectsApi =
-    API_NAME.PUBLIC +
-    ROUTER_PATH.contextPath +
-    API_NAME.SUBJECTS +
-    ROUTER_PATH.contextPath;
-
-  readonly usersApi =
-    API_NAME.PUBLIC +
-    ROUTER_PATH.contextPath +
-    API_NAME.USERS +
-    ROUTER_PATH.contextPath;
+  readonly trainingsApi = API_PATH_NAME.TRAININGS_PUBLIC_PATH;
+  readonly subjectsApi = API_PATH_NAME.SUBJECTS_PUBLIC_PATH;
+  readonly usersApi = API_PATH_NAME.USERS_PUBLIC_PATH;
 
   training: Training = <Training>{};
   subject: Subject = <Subject>{};
   user: User = <User>{};
   trainingId!: string | null;
 
-  constructor(
-    private apiService: ApiService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((param: ParamMap) => {

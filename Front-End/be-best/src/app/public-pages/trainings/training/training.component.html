@@ -51,7 +51,14 @@
       class="img-fluid rounded mb-1 image"
       alt="..."
     />
-    <p>{{ user.subjects }}</p>
+    <div class="">
+      <h2
+        class="border text-center rounded py-2 custom-lable"
+        *ngFor="let subject of user.subjects"
+      >
+        {{ subject.subject }}
+      </h2>
+    </div>
   </div>
 </div>
 <div class="row p-4 mb-2 bg-light shadow rounded">

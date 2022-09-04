@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { API_NAME } from 'src/app/app-config/app.conestant';
 import { ROUTER_PATH } from 'src/app/app-config/router-path-const';
 import { PublicInfo } from 'src/app/domains/shared/public-info';
@@ -22,14 +23,18 @@ export class AboutUsComponent implements OnInit {
     ROUTER_PATH.contextPath +
     API_NAME.TEACHERS;
 
-    readonly subjectsApi =
+  readonly subjectsApi =
     API_NAME.PUBLIC + ROUTER_PATH.contextPath + API_NAME.SUBJECTS;
 
   publicInfo: PublicInfo = <PublicInfo>{};
   teachers: User[] = [];
   subjects: Subject[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.getPublicInfo();
@@ -42,25 +47,25 @@ export class AboutUsComponent implements OnInit {
       .get<PublicInfo[]>(this.publicInfoApi)
       .subscribe((publicInfo) => {
         this.publicInfo = publicInfo[0];
-        console.log(this.publicInfo);
       });
   }
 
   getTeachers(): void {
     this.apiService.get<User[]>(this.teachersApi).subscribe((teachers) => {
       this.teachers = teachers;
-      console.log(this.teachers);
     });
   }
 
   getSubjects(): void {
     this.apiService.get<Subject[]>(this.subjectsApi).subscribe((subjects) => {
       this.subjects = subjects;
-      console.log(this.subjects);
     });
   }
 
-  goToTeacherPage(teacherId: string): void {
-    console.log(teacherId);
+  goToTeacherPage(teacherId: string | undefined): void {
+    if (teacherId) {
+      console.log(teacherId);
+      this.router.navigate([ROUTER_PATH.users + ROUTER_PATH.contextPath + teacherId]);
+    }
   }
 }

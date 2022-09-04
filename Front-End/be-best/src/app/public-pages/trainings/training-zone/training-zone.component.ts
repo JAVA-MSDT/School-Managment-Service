@@ -27,7 +27,6 @@ export class TrainingZoneComponent implements OnInit {
   }
 
   goToTrainingPage(trainingId: any) {
-    console.log(trainingId);
     this.router.navigate([trainingId], { relativeTo: this.route });
   }
 }
