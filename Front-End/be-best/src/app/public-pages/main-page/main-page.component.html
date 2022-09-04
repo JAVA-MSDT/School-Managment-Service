@@ -2,5 +2,39 @@
   <h1>Learning is Fun</h1>
   <p>check our available trainings from the list....</p>
 
-  <button [routerLink]="['/trainings']" class="btn btn-outline-light w-25 shadow border border-2 fs-5 fw-semibold fst-italic">Trainings</button>
+  <button
+    [routerLink]="['/trainings']"
+    class="btn btn-outline-light w-25 shadow border border-2 fs-5 fw-semibold fst-italic"
+  >
+    Trainings
+  </button>
+</div>
+
+<div class="container py-4">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-12 col-sm-3 m-2 border p-4 rounded shadow"
+    *ngFor="let training of trainings">
+      <div class="w-100">
+        <img src="/assets/images/learning.jpg" class="mb-1 img-fluid image" alt="..." />
+      </div>
+      <div
+        class=""
+      >
+        <h2 class="text-center my-3">{{training.title}}</h2>
+      </div>
+      <div class="my-4">
+        <p class="m-0">description</p>
+      </div>
+      <div>
+        <button
+          type="button"
+          class="btn btn-primary btn-lg me-4 ms-2"
+          (click)="goToTrainingPage('ID')"
+        >
+          {{ "view.training" | translate }}
+        </button>
+      </div>
+    </div>
+    
+  </div>
 </div>
