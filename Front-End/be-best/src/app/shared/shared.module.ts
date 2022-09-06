@@ -12,19 +12,23 @@ import {
   TranslateService,
 } from '@ngx-translate/core';
 import { DescriptionTranslatorPipe } from '../pipes/description-translator.pipe';
+import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
+import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 
 // loader module
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+const components = [
+  HeaderComponent,
+  FooterComponent,
+  DescriptionTranslatorPipe,
+  PageNotFoundComponent,
+  ScrollTopComponent,
+];
 @NgModule({
-  declarations: [
-    NavBarComponent,
-    HeaderComponent,
-    FooterComponent,
-    DescriptionTranslatorPipe,
-  ],
+  declarations: [NavBarComponent, ...components],
   imports: [
     CommonModule,
     RouterModule,
@@ -37,13 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    TranslateModule,
-    HttpClientModule,
-    DescriptionTranslatorPipe,
-  ],
+  exports: [TranslateModule, HttpClientModule, ...components],
   providers: [TranslateService],
 })
 export class SharedModule {}

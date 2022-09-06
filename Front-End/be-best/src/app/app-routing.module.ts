@@ -8,6 +8,7 @@ import { MainPageComponent } from './public-pages/main-page/main-page.component'
 import { TrainingZoneComponent } from './public-pages/trainings/training-zone/training-zone.component';
 import { TrainingComponent } from './public-pages/trainings/training/training.component';
 import { UserComponent } from './public-pages/user/user.component';
+import { PageNotFoundComponent } from './shared/errors/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: ROUTER_PATH.login,
     component: LoginComponent,
+  },
+  {
+    path: ROUTER_PATH.invalidPage,
+    component: PageNotFoundComponent,
   },
 ];
 
