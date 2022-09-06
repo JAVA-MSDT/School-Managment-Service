@@ -34,6 +34,9 @@ export const API_NAME = {
 };
 
 export const API_PATH_NAME = {
+  PUBLIC_INFO_PATH:
+    API_NAME.PUBLIC + ROUTER_PATH.contextPath + API_NAME.PUBLIC_INFO,
+    
   TRAININGS_PUBLIC_PATH:
     API_NAME.PUBLIC +
     ROUTER_PATH.contextPath +

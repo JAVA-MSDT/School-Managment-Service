@@ -6,11 +6,59 @@
     [routerLink]="['/trainings']"
     class="btn btn-outline-light w-25 shadow border border-2 fs-5 fw-semibold fst-italic"
   >
-    Trainings
+    {{"training" | translate}}
   </button>
 </div>
 
+<div class="row bg-light">
+  <div class="container p-4 ">
+    <div class="row">
+      <h2 class="w-100 p-4 text-center">{{ "our.team" | translate }}</h2>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 col-sm-3 m-2 border p-4 rounded shadow"
+      *ngFor="let teacher of teachers">
+        <div class="w-100">
+          <img src="/assets/images/language.jpg" class="mb-1 img-fluid image" alt="..." />
+        </div>
+        <div
+          class=""
+        >
+          <h2 class="text-center my-3">{{teacher.firstName}} {{teacher.lastName}}</h2>
+        </div>
+        <div class="my-4">
+          <p class="m-0">{{ teacher.bio | descriptionTranslator }}</p>
+        </div>
+        <div>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg me-4 ms-2"
+            (click)="goToTrainingPage('ID')"
+          >
+            {{ "view.teacher" | translate }}
+          </button>
+        </div>
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-12 py-4">
+        <button
+        type="button"
+        class="btn btn-primary btn-lg align-middle float-end"
+        [routerLink]="['/about-us']"
+      >
+        {{ "see.more" | translate }}
+      </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container py-4">
+  <div class="row">
+    <h2 class="w-100 p-4 text-center">{{"training" | translate}}</h2>
+  </div>
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col-12 col-sm-3 m-2 border p-4 rounded shadow"
     *ngFor="let training of trainings">
@@ -23,7 +71,7 @@
         <h2 class="text-center my-3">{{training.title}}</h2>
       </div>
       <div class="my-4">
-        <p class="m-0">description</p>
+        <p class="m-0">{{ training.description | descriptionTranslator }}</p>
       </div>
       <div>
         <button
@@ -37,4 +85,16 @@
     </div>
     
   </div>
+  <div class="row">
+    <div class="col-12 py-4">
+      <a
+      type="button"
+      class="btn btn-primary btn-lg align-middle float-end"
+      [routerLink]="['/trainings']"
+    >
+      {{ "see.more" | translate }}
+    </a>
+    </div>
+  </div>
 </div>
+

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { API_NAME } from 'src/app/app-config/app.conestant';
-import { ROUTER_PATH } from 'src/app/app-config/router-path-const';
+import { API_PATH_NAME } from 'src/app/app-config/app.conestant';
 import { Training } from 'src/app/domains/training/training';
 import { ApiService } from 'src/app/service/api/api.service';
 
@@ -12,7 +11,7 @@ import { ApiService } from 'src/app/service/api/api.service';
 })
 export class TrainingZoneComponent implements OnInit {
   trainings: Training[] = [];
-  readonly trainingsApi = API_NAME.PUBLIC + ROUTER_PATH.contextPath + API_NAME.TRAININGS;
+  readonly trainingsApi = API_PATH_NAME.TRAININGS_PUBLIC_PATH;
   constructor(
     private apiService: ApiService,
     private router: Router,
