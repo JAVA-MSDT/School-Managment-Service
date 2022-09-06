@@ -36,7 +36,7 @@ export const API_NAME = {
 export const API_PATH_NAME = {
   PUBLIC_INFO_PATH:
     API_NAME.PUBLIC + ROUTER_PATH.contextPath + API_NAME.PUBLIC_INFO,
-    
+
   TRAININGS_PUBLIC_PATH:
     API_NAME.PUBLIC +
     ROUTER_PATH.contextPath +
@@ -54,4 +54,10 @@ export const API_PATH_NAME = {
     ROUTER_PATH.contextPath +
     API_NAME.USERS +
     ROUTER_PATH.contextPath,
+};
+
+export const AUTH_CONST = {
+  access_token: 'access_token',
+  refresh_token: 'refresh_token',
+  is_user_in: 'isUserIn',
 };

@@ -14,6 +14,7 @@ import {
 import { DescriptionTranslatorPipe } from '../pipes/description-translator.pipe';
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // loader module
 export function HttpLoaderFactory(http: HttpClient) {
@@ -40,8 +41,9 @@ const components = [
         deps: [HttpClient],
       },
     }),
+    ReactiveFormsModule,
   ],
-  exports: [TranslateModule, HttpClientModule, ...components],
+  exports: [TranslateModule, HttpClientModule, ReactiveFormsModule, ...components],
   providers: [TranslateService],
 })
 export class SharedModule {}
