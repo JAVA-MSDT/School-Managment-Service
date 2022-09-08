@@ -15,23 +15,23 @@
     <div class="row bg-dark opacity-50 text-white">
       <h2 class="w-100 p-4 text-center">{{ "our.team" | translate }}</h2>
     </div>
-    <div class="row d-flex justify-content-center align-items-center">
+    <div class="row d-flex justify-content-center align-items-center px-4">
       <div
-        class="col-12 col-sm-3 m-2 border p-4 rounded shadow"
+        class="col-12 col-sm-3 m-2 shadow p-0 teacher-container"
         *ngFor="let teacher of teachers"
       >
-        <div class="w-100">
+        <div class="w-100 overflow-hidden">
           <img
             src="/assets/images/language.jpg"
             class="mb-1 img-fluid image"
             alt="..."
           />
         </div>
-        <div class="">
+        <div class="p-4 teacher-body">
           <h2 class="text-center my-3">
             {{ teacher.firstName }} {{ teacher.lastName }}
           </h2>
-        </div>
+       
         <div class="my-4">
           <p class="m-0">{{ teacher.bio | descriptionTranslator }}</p>
         </div>
@@ -44,6 +44,7 @@
             {{ "view.teacher" | translate }}
           </button>
         </div>
+      </div>
       </div>
     </div>
     <div class="row bg-dark opacity-50">
