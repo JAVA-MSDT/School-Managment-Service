@@ -25,6 +25,7 @@ import reactor.core.publisher.Mono;
 public class UserController {
 
     private final UserService userService;
+
     private final UserRepository userRepository;
 
     @GetMapping("/{id}")

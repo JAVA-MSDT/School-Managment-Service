@@ -32,8 +32,9 @@ public class PublicInfoService {
 
     public Mono<PublicInfoDto> findPublicInfoById(String id) {
         return publicInfoRepository.findById(id)
-                .switchIfEmpty(Mono.error(new PublicInfoException(String.format("Public Info with Id:: %s not found ", id),
-                        HttpStatus.NOT_FOUND)))
+                .switchIfEmpty(
+                        Mono.error(new PublicInfoException(String.format("Public Info with Id:: %s not found ", id),
+                                HttpStatus.NOT_FOUND)))
                 .map(publicInfoMapper::toPublicInfoDto);
     }
 

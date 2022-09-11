@@ -1,6 +1,7 @@
 package com.bebestlang.bebest.service.common;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 
 import com.bebestlang.bebest.dto.common.ImageDto;
 import com.bebestlang.bebest.exception.common.ImageException;
@@ -8,6 +9,7 @@ import com.bebestlang.bebest.mapper.common.ImageMapper;
 import com.bebestlang.bebest.repository.common.ImageRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.stereotype.Service;
@@ -19,22 +21,26 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class ImageService {
 
+    @Value("${images.upload-dir}")
+    private String uploadDir;
+
     private final ImageRepository imageRepository;
 
     private final ImageMapper imageMapper;
 
     public Mono<ImageDto> saveImage(ImageDto imageDto, Mono<FilePart> image) throws IOException {
 
-        return image.flatMap(imageFile -> imageFile.content().map(dataBuffer -> {
-                            byte[] imageBytes = new byte[dataBuffer.readableByteCount()];
-                            imageDto.setImage(imageBytes);
-                            return imageBytes;
-                        })
-                        .singleOrEmpty())
-                .doOnNext(System.out::println)
-                .flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)))
-                .doOnNext(System.out::println)
-                .map(imageMapper::toImageDto);
+        return image
+                .flatMap(imageFile -> {
+                    return imageFile.content().map(dataBuffer -> {
+                                byte[] imageBytes = dataBuffer.asByteBuffer().array();
+                                imageDto.setImage(new byte[dataBuffer.readableByteCount()]);
+                               //  imageDto.setUrl(Paths.get(uploadDir).resolve(imageFile.filename()).normalize().toString());
+                                return imageDto;
+                            }).next()
+                            .flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)))
+                            .map(imageMapper::toImageDto);
+                });
     }
 
     public Mono<ImageDto> findImageById(String id) {

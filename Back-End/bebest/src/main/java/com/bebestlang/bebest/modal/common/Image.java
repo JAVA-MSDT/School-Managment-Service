@@ -1,13 +1,11 @@
 package com.bebestlang.bebest.modal.common;
 
-import java.security.PrivateKey;
 import java.util.Set;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.Binary;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -34,6 +32,5 @@ public class Image {
     private Set<PurposeOfUse> purposeOfUses;
 
     private Set<Integer> placesOfUsed;
-
 
 }

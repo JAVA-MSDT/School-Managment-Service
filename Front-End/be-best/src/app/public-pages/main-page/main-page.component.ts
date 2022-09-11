@@ -16,7 +16,7 @@ export class MainPageComponent implements OnInit {
   trainings: Training[] = [];
   teachers: User[] = [];
   subjects: Subject[] = [];
-  
+
   readonly trainingsApi = API_PATH_NAME.TRAININGS_PUBLIC_PATH;
   readonly teachersApi = API_PATH_NAME.USERS_PUBLIC_PATH;
   readonly subjectsApi = API_PATH_NAME.SUBJECTS_PUBLIC_PATH;
@@ -31,6 +31,7 @@ export class MainPageComponent implements OnInit {
     this.getTraining();
     this.getTeachers();
     this.getSubjects();
+    this.getImage();
   }
 
   goToTrainingPage(trainingId: any) {
@@ -46,14 +47,21 @@ export class MainPageComponent implements OnInit {
 
   getSubjects(): void {
     this.apiService.get<Subject[]>(this.subjectsApi).subscribe((subjects) => {
-      this.subjects = subjects.slice(0, 4);;
+      this.subjects = subjects.slice(0, 4);
     });
   }
 
   getTeachers(): void {
     this.apiService.get<User[]>(this.teachersApi).subscribe((teachers) => {
-      this.teachers = teachers.slice(0, 3);;
+      this.teachers = teachers.slice(0, 3);
     });
   }
 
+  getImage(): void {
+    this.apiService
+      .get<unknown>(API_NAME.PUBLIC + '/images/display/bebestLogo1.png')
+      .subscribe((image) => {
+        console.log(image);
+      });
+  }
 }
