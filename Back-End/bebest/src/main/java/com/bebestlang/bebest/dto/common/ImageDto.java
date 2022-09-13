@@ -4,12 +4,14 @@ import java.util.Set;
 
 import com.bebestlang.bebest.modal.common.FileStatus;
 import com.bebestlang.bebest.modal.common.PurposeOfUse;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import springfox.documentation.annotations.ApiIgnore;
 
 @Data
 @NoArgsConstructor
@@ -21,11 +23,15 @@ public class ImageDto {
     @ApiModelProperty(value = "Image id", example = "UUID4")
     private String id;
 
-    @ApiModelProperty(value = "Image title", example = "mountain")
+    @ApiModelProperty(value = "Image title", example = "mountain", notes = "Will be used for rename image")
+    @JsonIgnore
     private String title;
 
     @ApiModelProperty(value = "Image alt", example = "Mountain of Everest")
     private String alt;
+
+    @ApiModelProperty(value = "Image extension", example = "JPG, PNG, JPEG,,, ETC")
+    private String extension;
 
     @ApiModelProperty(value = "Image url", example = "local/mountain.jpg")
     private String url;
@@ -36,10 +42,12 @@ public class ImageDto {
     @ApiModelProperty(value = "Image status", example = "PRIVATE or PUBLIC")
     private FileStatus fileStatus;
 
-    @ApiModelProperty(value = "Image Purpose Of Use", example = "BANNER, CAROUSEL, GALLERY or ALBUM")
+    @ApiModelProperty(value = "Image Purpose Of Use", example = "BANNER, CAROUSEL, GALLERY, ALBUM or UTIL")
     private Set<PurposeOfUse> purposeOfUses;
 
-    @ApiModelProperty(value = "Image Place of used", example = "[number of folder used to retrieve images belong to specific group]")
+    @ApiModelProperty(value = "Image Place of used",
+            example = "[number of folder used to retrieve images belong to specific group]",
+            notes = "Number of items from the purposeOfUses option")
     private Set<Integer> placesOfUsed;
 
 }

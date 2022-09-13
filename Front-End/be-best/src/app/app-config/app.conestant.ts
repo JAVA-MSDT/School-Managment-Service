@@ -31,6 +31,7 @@ export const API_NAME = {
   USERS: 'users',
   PUBLIC_INFO: 'public-info',
   TEACHERS: 'teachers',
+  IMAGES: 'images',
 };
 
 export const API_PATH_NAME = {
@@ -54,6 +55,12 @@ export const API_PATH_NAME = {
     ROUTER_PATH.contextPath +
     API_NAME.USERS +
     ROUTER_PATH.contextPath,
+
+  IMAGES_PUBLIC_PATH:
+    API_NAME.PUBLIC +
+    ROUTER_PATH.contextPath +
+    API_NAME.IMAGES +
+    ROUTER_PATH.contextPath,
 };
 
 export const AUTH_CONST = {
@@ -61,3 +68,9 @@ export const AUTH_CONST = {
   refresh_token: 'refresh_token',
   is_user_in: 'isUserIn',
 };
+
+export const FILE_METADATE = {
+  BASE64: 'base64',
+  IMAGE_DATA: 'data:image/',
+
+}

@@ -23,6 +23,8 @@ public class Image {
 
     private String alt;
 
+    private String extension;
+
     private String url;
 
     private String imageBase64;

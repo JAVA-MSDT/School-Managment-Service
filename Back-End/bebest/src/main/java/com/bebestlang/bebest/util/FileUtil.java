@@ -11,6 +11,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.Base64;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -60,12 +61,15 @@ public class FileUtil {
         return false;
     }
 
-    public static String encodeFileToBase64(File file) {
-        try {
-            byte[] fileContent = Files.readAllBytes(file.toPath());
-            return Base64.getEncoder().encodeToString(fileContent);
-        } catch (IOException e) {
-            throw new IllegalStateException("could not read file " + file, e);
-        }
+    public static String encodeByteToBase64(byte[] bytes) {
+            return Base64.getEncoder().encodeToString(bytes);
+    }
+
+    public static String encodeDataBufferToBase64(DataBuffer dataBuffer) {
+        byte[] bytes = new byte[dataBuffer.readableByteCount()];
+        dataBuffer.read(bytes);
+        DataBufferUtils.release(dataBuffer);
+
+        return encodeByteToBase64(bytes);
     }
 }

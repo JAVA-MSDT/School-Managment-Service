@@ -7,7 +7,6 @@ import { Training } from 'src/app/domains/training/training';
 import { User } from 'src/app/domains/user/user';
 import { Image } from 'src/app/domains/shared/image';
 import { ApiService } from 'src/app/service/api/api.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'dc-main-page',
@@ -30,14 +29,12 @@ export class MainPageComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
     this.getTraining();
     this.getTeachers();
     this.getSubjects();
-    this.getImage();
   }
 
   goToTrainingPage(trainingId: any) {
@@ -61,17 +58,5 @@ export class MainPageComponent implements OnInit {
     this.apiService.get<User[]>(this.teachersApi).subscribe((teachers) => {
       this.teachers = teachers.slice(0, 3);
     });
-  }
-
-  getImage(): void {
-    this.apiService
-      .get<Image>(API_NAME.PUBLIC + '/images/127896500')
-      .subscribe((image) => {
-        console.log(image);
-        let objectURL = 'data:image/jpg;base64,' + image.imageBase64;
-        this.thumbnail = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-        console.log(objectURL);
-        console.log(this.thumbnail);
-      }); 
   }
 }
