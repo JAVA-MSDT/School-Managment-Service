@@ -1,6 +1,10 @@
 package com.bebestlang.bebest.controller.publiccontroller.common;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Set;
 
 import com.bebestlang.bebest.dto.common.ImageDto;
@@ -10,6 +14,7 @@ import com.bebestlang.bebest.service.common.ImageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.data.mongodb.gridfs.ReactiveGridFsTemplate;
 import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,6 +37,8 @@ public class ImageController {
 
     @Value("${images.upload-dir}")
     private String uploadDir;
+
+    private final Path basePath = Paths.get("./src/main/resources/files/");
 
     private final ImageService imageService;
 
@@ -65,5 +72,23 @@ public class ImageController {
     @GetMapping
     public Flux<ImageDto> findAllImages() {
         return imageService.findAllImages();
+    }
+
+    @PostMapping(value = "/byte")
+    public Mono<Void> getBytes(@RequestPart("image") Mono<FilePart> imageFile) throws IOException {
+        return imageFile.flatMap(image -> image.transferTo(basePath.resolve(image.filename()))
+        ).then();
+    }
+
+    private byte[] convertFilePartToByteArray(FilePart file) throws IOException {
+        File convFile = new File(file.filename());
+        System.out.println("convFile.isFile(): " + convFile.isFile());
+        System.out.println("convFile.getName(): " + convFile.getName());
+        System.out.println("convFile.getPath(): " + convFile.getPath());
+        System.out.println("convFile.getAbsolutePath(): " + convFile.getAbsolutePath());
+        file.transferTo(convFile);
+        return Files.readAllBytes(convFile.toPath());
+      /*  return DataBufferUtils.join(file.content())
+                .map(dataBuffer -> dataBuffer.asByteBuffer().array());*/
     }
 }

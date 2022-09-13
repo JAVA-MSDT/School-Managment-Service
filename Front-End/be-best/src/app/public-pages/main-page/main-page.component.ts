@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { API_NAME, API_PATH_NAME } from 'src/app/app-config/app.conestant';
-import { ROUTER_PATH } from 'src/app/app-config/router-path-const';
 import { Subject } from 'src/app/domains/training/subject';
 import { Training } from 'src/app/domains/training/training';
 import { User } from 'src/app/domains/user/user';
+import { Image } from 'src/app/domains/shared/image';
 import { ApiService } from 'src/app/service/api/api.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'dc-main-page',
@@ -17,6 +19,8 @@ export class MainPageComponent implements OnInit {
   teachers: User[] = [];
   subjects: Subject[] = [];
 
+  thumbnail: any;
+
   readonly trainingsApi = API_PATH_NAME.TRAININGS_PUBLIC_PATH;
   readonly teachersApi = API_PATH_NAME.USERS_PUBLIC_PATH;
   readonly subjectsApi = API_PATH_NAME.SUBJECTS_PUBLIC_PATH;
@@ -24,7 +28,9 @@ export class MainPageComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -59,9 +65,13 @@ export class MainPageComponent implements OnInit {
 
   getImage(): void {
     this.apiService
-      .get<unknown>(API_NAME.PUBLIC + '/images/display/bebestLogo1.png')
+      .get<Image>(API_NAME.PUBLIC + '/images/127896500')
       .subscribe((image) => {
         console.log(image);
-      });
+        let objectURL = 'data:image/jpg;base64,' + image.imageBase64;
+        this.thumbnail = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+        console.log(objectURL);
+        console.log(this.thumbnail);
+      }); 
   }
 }

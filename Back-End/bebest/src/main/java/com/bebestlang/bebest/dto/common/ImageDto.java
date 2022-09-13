@@ -30,8 +30,8 @@ public class ImageDto {
     @ApiModelProperty(value = "Image url", example = "local/mountain.jpg")
     private String url;
 
-    @ApiModelProperty(value = "Image binary", example = "Image object")
-    private byte[] image;
+    @ApiModelProperty(value = "Image in Base64", example = "Image object")
+    private String imageBase64;
 
     @ApiModelProperty(value = "Image status", example = "PRIVATE or PUBLIC")
     private FileStatus fileStatus;

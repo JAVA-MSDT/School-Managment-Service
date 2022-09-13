@@ -1,7 +1,7 @@
 package com.bebestlang.bebest.service.common;
 
 import java.io.IOException;
-import java.nio.file.Paths;
+import java.util.Base64;
 
 import com.bebestlang.bebest.dto.common.ImageDto;
 import com.bebestlang.bebest.exception.common.ImageException;
@@ -10,6 +10,7 @@ import com.bebestlang.bebest.repository.common.ImageRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.stereotype.Service;
@@ -32,16 +33,51 @@ public class ImageService {
 
         return image
                 .flatMap(imageFile -> {
+/*                    File fileImage = new File(imageFile.filename());
+                    String imageBase64 = FileUtil.encodeFileToBase64(fileImage);
+                    imageDto.setImageBase64(imageBase64);
+                    return imageDto;*/
                     return imageFile.content().map(dataBuffer -> {
-                                byte[] imageBytes = dataBuffer.asByteBuffer().array();
-                                imageDto.setImage(new byte[dataBuffer.readableByteCount()]);
-                               //  imageDto.setUrl(Paths.get(uploadDir).resolve(imageFile.filename()).normalize().toString());
+
+                                dataBuffer.asByteBuffer();
+                                byte[] bytes = new byte[dataBuffer.readableByteCount()];
+                                dataBuffer.read(bytes);
+                                DataBufferUtils.release(dataBuffer);
+                                String imageBase64 = Base64.getEncoder().encodeToString(bytes);
+                                System.out.println(imageBase64);
+                                //  imageDto.setUrl(Paths.get(uploadDir).resolve(imageFile.filename()).normalize().toString());
+                                imageDto.setImageBase64(imageBase64);
+
                                 return imageDto;
                             }).next()
                             .flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)))
                             .map(imageMapper::toImageDto);
-                });
+                }).flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)))
+                .map(imageMapper::toImageDto);
     }
+
+/*    public Mono<ImageDto> saveImage(ImageDto imageDto, Mono<FilePart> image) throws IOException {
+
+        return image
+                .map(imageFile -> {
+                    File fileImage = new File(imageFile.filename());
+                    String imageBase64 = FileUtil.encodeFileToBase64(fileImage);
+                    imageDto.setImageBase64(imageBase64);
+                    return imageDto;
+*//*                    return imageFile.content().map(dataBuffer -> {
+                                byte[] bytes = new byte[dataBuffer.readableByteCount()];
+                                dataBuffer.read(bytes);
+                                DataBufferUtils.release(dataBuffer);
+                                byte[] imageBytes = dataBuffer.asByteBuffer().array();
+                                imageDto.setImage(bytes);
+                               //  imageDto.setUrl(Paths.get(uploadDir).resolve(imageFile.filename()).normalize().toString());
+                                return imageDto;
+                            }).next()
+                            .flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)))
+                            .map(imageMapper::toImageDto);*//*
+                }).flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)))
+                .map(imageMapper::toImageDto);
+    }*/
 
     public Mono<ImageDto> findImageById(String id) {
         return imageRepository.findById(id)

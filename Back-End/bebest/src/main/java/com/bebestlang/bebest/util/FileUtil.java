@@ -1,5 +1,6 @@
 package com.bebestlang.bebest.util;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.channels.AsynchronousFileChannel;
@@ -7,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Base64;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.buffer.DataBufferUtils;
@@ -56,5 +58,14 @@ public class FileUtil {
             log.error("ERROR CreateFile: {}", e.getMessage());
         }
         return false;
+    }
+
+    public static String encodeFileToBase64(File file) {
+        try {
+            byte[] fileContent = Files.readAllBytes(file.toPath());
+            return Base64.getEncoder().encodeToString(fileContent);
+        } catch (IOException e) {
+            throw new IllegalStateException("could not read file " + file, e);
+        }
     }
 }

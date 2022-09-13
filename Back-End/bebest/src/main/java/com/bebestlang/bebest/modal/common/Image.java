@@ -25,7 +25,7 @@ public class Image {
 
     private String url;
 
-    private byte[] image;
+    private String imageBase64;
 
     private FileStatus fileStatus;
 
