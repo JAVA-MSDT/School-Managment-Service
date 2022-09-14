@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PublicPagesModule } from './public-pages/public-pages.module';
 import { SharedModule } from './shared/shared.module';
-import { DescriptionTranslatorPipe } from './pipes/description-translator.pipe';
 
 @NgModule({
   declarations: [AppComponent],

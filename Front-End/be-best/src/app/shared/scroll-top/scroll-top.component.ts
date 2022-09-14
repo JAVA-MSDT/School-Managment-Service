@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Image } from 'src/app/domains/shared/image';
 import {
-  API_NAME,
   API_PATH_NAME,
   FILE_METADATE,
 } from 'src/app/app-config/app.conestant';
@@ -15,7 +14,8 @@ import { IMAGE_STATIC_ID } from 'src/app/app-config/image-static-id';
   styleUrls: ['./scroll-top.component.sass'],
 })
 export class ScrollTopComponent implements OnInit {
-  scrollTopImage!: SafeUrl;
+  scrollTopImage: SafeUrl = <SafeUrl>{};
+  image: Image = <Image>{};
 
   constructor(
     private apiService: ApiService,
@@ -46,6 +46,7 @@ export class ScrollTopComponent implements OnInit {
           ',' +
           image.imageBase64;
         this.scrollTopImage = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+        this.image = image;
       });
   }
 }

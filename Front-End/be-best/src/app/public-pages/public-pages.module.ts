@@ -11,6 +11,7 @@ import { TrainingComponent } from './trainings/training/training.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserComponent } from './user/user.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const components = [
   MainPageComponent,
@@ -20,6 +21,7 @@ const components = [
   TrainingComponent,
   UserComponent,
   ContactUsComponent,
+  GalleryComponent
 ];
 
 @NgModule({

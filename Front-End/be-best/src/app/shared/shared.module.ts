@@ -15,6 +15,9 @@ import { DescriptionTranslatorPipe } from '../pipes/description-translator.pipe'
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CarouselComponent } from './reusable-componenet/carousel/carousel.component';
+import { ImageDecoderPipe } from '../pipes/image-decoder.pipe';
+
 
 // loader module
 export function HttpLoaderFactory(http: HttpClient) {
@@ -27,9 +30,10 @@ const components = [
   DescriptionTranslatorPipe,
   PageNotFoundComponent,
   ScrollTopComponent,
+  ImageDecoderPipe,
 ];
 @NgModule({
-  declarations: [NavBarComponent, ...components],
+  declarations: [NavBarComponent, ...components, CarouselComponent],
   imports: [
     CommonModule,
     RouterModule,

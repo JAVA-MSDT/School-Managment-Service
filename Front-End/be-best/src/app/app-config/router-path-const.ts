@@ -6,6 +6,7 @@ export const ROUTER_PATH = {
     contactUs: 'contact-us',
     trainings: 'trainings',
     users: "users",
+    gallery: "gallery",
     id: ':id',
     invalidPage: '**'
 };

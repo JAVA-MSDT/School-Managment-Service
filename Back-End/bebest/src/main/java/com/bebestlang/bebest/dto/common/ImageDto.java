@@ -1,5 +1,6 @@
 package com.bebestlang.bebest.dto.common;
 
+import java.util.Map;
 import java.util.Set;
 
 import com.bebestlang.bebest.modal.common.FileStatus;
@@ -27,8 +28,12 @@ public class ImageDto {
     @JsonIgnore
     private String title;
 
-    @ApiModelProperty(value = "Image alt", example = "Mountain of Everest")
-    private String alt;
+    @ApiModelProperty(value = "Image alt", example = "aboutUsIntro: {" +
+            "EN: \"English alt\"," +
+            "PL: \"Polish alt\"" +
+            "}",
+            notes = "Map object, Key is the Language shortcut & Value is the alt in that language ")
+    private Map<String, String> alt;
 
     @ApiModelProperty(value = "Image extension", example = "JPG, PNG, JPEG,,, ETC")
     private String extension;

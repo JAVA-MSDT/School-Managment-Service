@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Map;
 import java.util.Set;
 
 import com.bebestlang.bebest.dto.common.ImageDto;
@@ -17,6 +18,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.data.mongodb.gridfs.ReactiveGridFsTemplate;
 import org.springframework.http.codec.multipart.FilePart;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,7 +49,8 @@ public class ImageController {
     @PostMapping()
     public Mono<ImageDto> saveImage(@RequestParam(value = "id", required = false) String id,
             @RequestParam(value = "title", required = false) String title,
-            @RequestParam(value = "alt", required = false) String alt,
+            @RequestParam(value = "englishAlt", required = false) String englishAlt,
+            @RequestParam(value = "polishAlt", required = false) String polishAlt,
             @RequestParam(value = "fileStatus", required = false) FileStatus fileStatus,
             @RequestParam(value = "purposeOfUses", required = false) Set<PurposeOfUse> purposeOfUses,
             @RequestParam(value = "placesOfUsed", required = false) Set<Integer> placesOfUsed,
@@ -56,7 +59,7 @@ public class ImageController {
         ImageDto imageDto = ImageDto.builder()
                 .id(id)
                 .title(title)
-                .alt(alt)
+                .alt(buildTranslationMap(englishAlt, polishAlt))
                 .fileStatus(fileStatus)
                 .purposeOfUses(purposeOfUses)
                 .placesOfUsed(placesOfUsed)
@@ -90,5 +93,9 @@ public class ImageController {
         return Files.readAllBytes(convFile.toPath());
       /*  return DataBufferUtils.join(file.content())
                 .map(dataBuffer -> dataBuffer.asByteBuffer().array());*/
+    }
+
+    private Map<String, String> buildTranslationMap(String english, String polish) {
+        return Map.of("EN", english, "PL", polish);
     }
 }

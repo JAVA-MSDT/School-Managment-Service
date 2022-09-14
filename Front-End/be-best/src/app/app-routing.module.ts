@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ROUTER_PATH } from './app-config/router-path-const';
 import { AboutUsComponent } from './public-pages/about-us/about-us.component';
 import { ContactUsComponent } from './public-pages/contact-us/contact-us.component';
+import { GalleryComponent } from './public-pages/gallery/gallery.component';
 import { LoginComponent } from './public-pages/login/login.component';
 import { MainPageComponent } from './public-pages/main-page/main-page.component';
 import { TrainingZoneComponent } from './public-pages/trainings/training-zone/training-zone.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: ROUTER_PATH.contactUs,
     component: ContactUsComponent,
+  },
+  {
+    path: ROUTER_PATH.gallery,
+    component: GalleryComponent,
   },
   {
     path: ROUTER_PATH.trainings,

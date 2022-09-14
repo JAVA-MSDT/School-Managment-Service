@@ -1,5 +1,6 @@
 package com.bebestlang.bebest.modal.common;
 
+import java.util.Map;
 import java.util.Set;
 
 import lombok.AllArgsConstructor;
@@ -21,7 +22,7 @@ public class Image {
 
     private String title;
 
-    private String alt;
+    private Map<String, String> alt;
 
     private String extension;
 
