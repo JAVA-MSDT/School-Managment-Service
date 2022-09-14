@@ -35,12 +35,10 @@ public class ImageService {
         return image
                 .flatMap(imageFile -> {
                     return imageFile.content().map(dataBuffer -> {
-                                setImageBase64(imageDto, dataBuffer);
-                                setImageExtension(imageDto, imageFile.filename());
-                                return imageDto;
-                            }).next()
-                            .flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)))
-                            .map(imageMapper::toImageDto);
+                        setImageBase64(imageDto, dataBuffer);
+                        setImageExtension(imageDto, imageFile.filename());
+                        return imageDto;
+                    }).next();
                 }).flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)))
                 .map(imageMapper::toImageDto);
     }
@@ -59,6 +57,7 @@ public class ImageService {
 
     private void setImageBase64(ImageDto imageDto, DataBuffer dataBuffer) {
         String imageBase64 = FileUtil.encodeDataBufferToBase64(dataBuffer);
+        System.out.println(imageBase64);
         imageDto.setImageBase64(imageBase64);
     }
 

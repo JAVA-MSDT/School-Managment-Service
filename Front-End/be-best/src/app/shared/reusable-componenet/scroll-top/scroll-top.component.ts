@@ -37,15 +37,6 @@ export class ScrollTopComponent implements OnInit {
         API_PATH_NAME.IMAGES_PUBLIC_PATH + IMAGE_STATIC_ID.SCROLL_TOP_ICON
       )
       .subscribe((image) => {
-        console.log(image);
-        let objectURL =
-          FILE_METADATE.IMAGE_DATA +
-          image.extension +
-          ';' +
-          FILE_METADATE.BASE64 +
-          ',' +
-          image.imageBase64;
-        this.scrollTopImage = this.sanitizer.bypassSecurityTrustUrl(objectURL);
         this.image = image;
       });
   }

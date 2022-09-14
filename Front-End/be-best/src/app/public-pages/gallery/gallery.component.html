@@ -1,1 +1,8 @@
-<p>gallery works!</p>
+<div *ngFor="let image of images">
+  <img
+    [src]="image | imageDecoder"
+    alt="{{ image.alt | descriptionTranslator }}"
+    width="400px"
+    height="400px"
+  />
+</div>

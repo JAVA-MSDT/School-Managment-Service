@@ -13,7 +13,7 @@ import {
 } from '@ngx-translate/core';
 import { DescriptionTranslatorPipe } from '../pipes/description-translator.pipe';
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
-import { ScrollTopComponent } from './scroll-top/scroll-top.component';
+import { ScrollTopComponent } from './reusable-componenet/scroll-top/scroll-top.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CarouselComponent } from './reusable-componenet/carousel/carousel.component';
 import { ImageDecoderPipe } from '../pipes/image-decoder.pipe';

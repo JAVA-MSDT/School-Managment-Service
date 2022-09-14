@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
 import java.util.Base64;
 
 import lombok.extern.slf4j.Slf4j;
@@ -62,6 +63,7 @@ public class FileUtil {
     }
 
     public static String encodeByteToBase64(byte[] bytes) {
+        System.out.println("Bytes:: " + Arrays.toString(bytes));
             return Base64.getEncoder().encodeToString(bytes);
     }
 

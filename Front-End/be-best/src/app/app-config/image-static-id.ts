@@ -1,3 +1,3 @@
 export const IMAGE_STATIC_ID = {
-    SCROLL_TOP_ICON: '6320ed6cf56a8e7e04f27833',
+    SCROLL_TOP_ICON: '63224e938111df474e1cf7b2',
 }
