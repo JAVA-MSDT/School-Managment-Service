@@ -1,9 +1,10 @@
 <div class="row text-center p-4">
-  <div class="col-md-4" *ngFor="let image of images">
+  <div class="col-md-4 d-flex justify-content-center align-items-center" *ngFor="let image of images">
     <img
       [src]="image | imageDecoder"
       alt="{{ image.alt | descriptionTranslator }}"
-      class="img-fluid border shadow "
+      class="img-fluid border shadow rounded m-1"
     />
   </div>
 </div>
+<b-best-carousel [carouselImage]="images"></b-best-carousel>

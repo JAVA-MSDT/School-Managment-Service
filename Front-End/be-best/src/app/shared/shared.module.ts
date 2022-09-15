@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -31,9 +32,10 @@ const components = [
   PageNotFoundComponent,
   ScrollTopComponent,
   ImageDecoderPipe,
+  CarouselComponent
 ];
 @NgModule({
-  declarations: [NavBarComponent, ...components, CarouselComponent],
+  declarations: [NavBarComponent, ...components],
   imports: [
     CommonModule,
     RouterModule,
@@ -46,8 +48,9 @@ const components = [
       },
     }),
     ReactiveFormsModule,
+    NgbModule
   ],
-  exports: [TranslateModule, HttpClientModule, ReactiveFormsModule, ...components],
+  exports: [TranslateModule, HttpClientModule, ReactiveFormsModule, NgbModule, ...components],
   providers: [TranslateService],
 })
 export class SharedModule {}
