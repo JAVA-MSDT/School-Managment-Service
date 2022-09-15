@@ -1,2 +1,12 @@
 <b-best-nav-bar></b-best-nav-bar>
-
+<div class="custom-jumbotron p-5 bg-primary text-dark row h-50">
+    <h1>Learning is Fun</h1>
+    <p>check our available trainings from the list....</p>
+  
+    <button
+      [routerLink]="['/trainings']"
+      class="btn btn-outline-light w-25 shadow border border-2 fs-5 fw-semibold fst-italic"
+    >
+      {{ "training" | translate }}
+    </button>
+  </div>

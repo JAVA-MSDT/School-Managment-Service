@@ -1,18 +1,6 @@
-<div class="custom-jumbotron p-5 bg-primary text-dark row h-50">
-  <h1>Learning is Fun</h1>
-  <p>check our available trainings from the list....</p>
-
-  <button
-    [routerLink]="['/trainings']"
-    class="btn btn-outline-light w-25 shadow border border-2 fs-5 fw-semibold fst-italic"
-  >
-    {{ "training" | translate }}
-  </button>
-</div>
-
 <div class="row">
   <div class="container">
-    <div class="row bg-dark opacity-50 text-white">
+    <div class="row text-white division-container">
       <h2 class="w-100 p-4 text-center">{{ "our.team" | translate }}</h2>
     </div>
     <div class="row d-flex justify-content-center align-items-center px-4">
@@ -47,7 +35,7 @@
       </div>
       </div>
     </div>
-    <div class="row bg-dark opacity-50">
+    <div class="row custom-lable">
       <div class="col-12 py-4">
         <a
           type="button"
@@ -63,7 +51,7 @@
 
 <div class="row calendar-bg">
   <div class="container">
-    <div class="row bg-dark opacity-50 text-white">
+    <div class="row division-container text-white">
       <h2 class="w-100 p-4 text-center">{{ "training" | translate }}</h2>
     </div>
     <div class="row d-flex justify-content-center align-items-center pt-4">
@@ -95,11 +83,11 @@
         </div>
       </div>
     </div>
-    <div class="row bg-dark opacity-50">
+    <div class="row custom-lable">
       <div class="col-12 py-4">
         <a
           type="button"
-          class="btn btn-light btn-lg align-middle float-end shadow"
+          class="btn btn-lg align-middle float-end shadow"
           [routerLink]="['/trainings']"
         >
           {{ "see.more" | translate }}
