@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.bebestlang.bebest.dto.common.ImageDto;
 import com.bebestlang.bebest.exception.common.ImageException;
 import com.bebestlang.bebest.mapper.common.ImageMapper;
+import com.bebestlang.bebest.modal.common.Image;
 import com.bebestlang.bebest.repository.common.ImageRepository;
 import com.bebestlang.bebest.util.FileUtil;
 import lombok.RequiredArgsConstructor;
@@ -30,7 +31,7 @@ public class ImageService {
 
     private final ImageMapper imageMapper;
 
-    public Mono<ImageDto> saveImage(ImageDto imageDto, Mono<FilePart> image) throws IOException {
+    public Mono<Image> saveImage(ImageDto imageDto, Mono<FilePart> image) {
 
         return image
                 .flatMap(imageFile -> {
@@ -39,20 +40,27 @@ public class ImageService {
                         setImageExtension(imageDto, imageFile.filename());
                         return imageDto;
                     }).next();
-                }).flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)))
-                .map(imageMapper::toImageDto);
+                }).flatMap(imageMap -> imageRepository.save(imageMapper.toImage(imageDto)));
     }
 
-    public Mono<ImageDto> findImageById(String id) {
+    public Mono<Image> findImageById(String id) {
         return imageRepository.findById(id)
                 .switchIfEmpty(Mono.error(new ImageException(String.format("Image with Id:: %s not found ", id),
-                        HttpStatus.NOT_FOUND)))
-                .map(imageMapper::toImageDto);
+                        HttpStatus.NOT_FOUND)));
     }
 
-    public Flux<ImageDto> findAllImages() {
-        return imageRepository.findAll()
-                .map(imageMapper::toImageDto);
+    public Flux<Image> findAllImages() {
+        return imageRepository.findAll();
+    }
+
+    public Flux<Image> findAllByPlacesOfUsedAndPurposeOfUses(int placeOfUsed, String purposeOfUses) {
+        return imageRepository.findAllByPlacesOfUsedAndPurposeOfUses(placeOfUsed, purposeOfUses)
+                .switchIfEmpty(Mono.error(new ImageException(String.format("No Images matching the search criteria :: %s & %s ", placeOfUsed, purposeOfUses),
+                        HttpStatus.NOT_FOUND)));
+    }
+
+    public Mono<Void> deleteImageById(String id) {
+        return this.findImageById(id).flatMap(imageRepository::delete);
     }
 
     private void setImageBase64(ImageDto imageDto, DataBuffer dataBuffer) {

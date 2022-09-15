@@ -27,12 +27,19 @@ public class ImageDto {
     @JsonIgnore
     private String title;
 
-    @ApiModelProperty(value = "Image alt", example = "aboutUsIntro: {" +
-            "EN: \"English alt\"," +
-            "PL: \"Polish alt\"" +
+    @ApiModelProperty(value = "Image alt", example = "alt: {" +
+            "EN: English alt," +
+            "PL: Polish alt" +
             "}",
             notes = "Map object, Key is the Language shortcut & Value is the alt in that language ")
     private Map<String, String> alt;
+
+    @ApiModelProperty(value = "Image description", example = "description: {" +
+            "EN: English alt," +
+            "PL: Polish alt" +
+            "}",
+            notes = "Map object, Key is the Language shortcut & Value is the description in that language ")
+    private Map<String, String> description;
 
     @ApiModelProperty(value = "Image extension", example = "JPG, PNG, JPEG,,, ETC")
     private String extension;

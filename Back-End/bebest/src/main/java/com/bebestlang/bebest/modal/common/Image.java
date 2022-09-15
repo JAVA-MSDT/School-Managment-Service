@@ -24,6 +24,8 @@ public class Image {
 
     private Map<String, String> alt;
 
+    private Map<String, String> description;
+
     private String extension;
 
     private String url;
