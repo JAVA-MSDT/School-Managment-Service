@@ -1,8 +1,9 @@
-<div *ngFor="let image of images">
-  <img
-    [src]="image | imageDecoder"
-    alt="{{ image.alt | descriptionTranslator }}"
-    width="400px"
-    height="400px"
-  />
+<div class="row text-center p-4">
+  <div class="col-md-4" *ngFor="let image of images">
+    <img
+      [src]="image | imageDecoder"
+      alt="{{ image.alt | descriptionTranslator }}"
+      class="img-fluid border shadow "
+    />
+  </div>
 </div>

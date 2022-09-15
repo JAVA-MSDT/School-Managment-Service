@@ -63,7 +63,6 @@ public class FileUtil {
     }
 
     public static String encodeByteToBase64(byte[] bytes) {
-        System.out.println("Bytes:: " + Arrays.toString(bytes));
             return Base64.getEncoder().encodeToString(bytes);
     }
 

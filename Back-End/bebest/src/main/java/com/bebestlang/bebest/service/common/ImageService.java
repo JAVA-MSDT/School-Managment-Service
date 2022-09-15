@@ -57,7 +57,6 @@ public class ImageService {
 
     private void setImageBase64(ImageDto imageDto, DataBuffer dataBuffer) {
         String imageBase64 = FileUtil.encodeDataBufferToBase64(dataBuffer);
-        System.out.println(imageBase64);
         imageDto.setImageBase64(imageBase64);
     }
 

@@ -12,7 +12,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import springfox.documentation.annotations.ApiIgnore;
 
 @Data
 @NoArgsConstructor
@@ -41,7 +40,9 @@ public class ImageDto {
     @ApiModelProperty(value = "Image url", example = "local/mountain.jpg")
     private String url;
 
-    @ApiModelProperty(value = "Image in Base64", example = "Image object")
+    @ApiModelProperty(value = "Image in Base64", example = "Image object",
+            notes = "You can upload image maxsize is 5MB using file part, " +
+                    "than it will be convert it to Base64")
     private String imageBase64;
 
     @ApiModelProperty(value = "Image status", example = "PRIVATE or PUBLIC")
