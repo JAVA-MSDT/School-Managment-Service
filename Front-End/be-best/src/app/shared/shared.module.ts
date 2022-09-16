@@ -18,6 +18,7 @@ import { ScrollTopComponent } from './reusable-componenet/scroll-top/scroll-top.
 import { ReactiveFormsModule } from '@angular/forms';
 import { CarouselComponent } from './reusable-componenet/carousel/carousel.component';
 import { ImageDecoderPipe } from '../pipes/image-decoder.pipe';
+import { ProfileCardComponent } from './reusable-componenet/profile-card/profile-card.component';
 
 
 // loader module
@@ -32,7 +33,8 @@ const components = [
   PageNotFoundComponent,
   ScrollTopComponent,
   ImageDecoderPipe,
-  CarouselComponent
+  CarouselComponent,
+  ProfileCardComponent
 ];
 @NgModule({
   declarations: [NavBarComponent, ...components],

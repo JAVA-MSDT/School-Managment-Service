@@ -22,49 +22,14 @@
 <div class="row text-center division-container">
   <h2 class="w-100 p-4">{{ "our.team" | translate }}</h2>
 </div>
-
-<div class="container py-4">
-  <div class="row d-flex justify-content-between align-items-center">
-    <div
-      class="col-12 col-lg-3 col-md-5 custom-container"
-      *ngFor="let teacher of teachers"
-    >
-      <div class="row">
-        <div
-          class="col-12 d-flex justify-content-center align-items-center flex-column py-2 border-bottom"
-        >
-          <div
-            class="border-bottom border-top custom-lable rounded w-100 text-center mb-2"
-          >
-            <h3>{{ teacher.firstName }} {{ teacher.lastName }}</h3>
-          </div>
-          <div class="">
-            <img
-              src="/assets/images/language.jpg"
-              class="img-thumbnail image"
-              alt="..."
-            />
-          </div>
-        </div>
-        <div
-          class="col-12 d-flex justify-content-center align-items-stretch flex-column p-4 border-start"
-        >
-          <div class="my-4">
-            <p class="m-0">
-              {{ teacher.bio | descriptionTranslator }}
-            </p>
-            <p class="">{{ teacher.username }}</p>
-          </div>
-          <div class="border-top pt-2">
-            <button
-              type="button"
-              class="btn btn-primary btn-lg me-4 ms-2"
-              (click)="goToTeacherPage(teacher.id)"
-            >
-              {{ "view.teacher" | translate }}
-            </button>
-          </div>
-        </div>
+<div class="row bg-light px-3">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-item-center">
+      <div
+        class="col-sm-5 col-12 mx-2 my-4"
+        *ngFor="let teacher of teachers"
+      >
+        <b-best-profile-card [teacher]="teacher"></b-best-profile-card>
       </div>
     </div>
   </div>
