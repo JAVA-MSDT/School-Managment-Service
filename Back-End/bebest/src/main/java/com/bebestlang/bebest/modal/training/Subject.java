@@ -1,7 +1,9 @@
 package com.bebestlang.bebest.modal.training;
 
 import java.util.Map;
+import java.util.Set;
 
+import com.bebestlang.bebest.modal.common.SimpleImage;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,4 +24,9 @@ public class Subject {
     private String subject;
 
     private Map<String, String> description;
+
+    private Map<String, String> additionalInfo;
+
+    private Set<SimpleImage> simpleImages;
+
 }

@@ -38,7 +38,13 @@ public interface UserMapper {
         }
         Set<Subject> subjectSet = new HashSet<>();
         subjects.forEach(subjectDto -> {
-            Subject subject = new Subject(subjectDto.getId(), subjectDto.getSubject(), subjectDto.getDescription());
+            Subject subject = Subject.builder()
+                    .id(subjectDto.getId())
+                    .subject(subjectDto.getSubject())
+                    .description(subjectDto.getDescription())
+                    .additionalInfo(subjectDto.getAdditionalInfo())
+                    .simpleImages(subjectDto.getSimpleImages())
+                    .build();
             subjectSet.add(subject);
         });
         return subjectSet;
@@ -52,7 +58,13 @@ public interface UserMapper {
 
         Set<SubjectDto> subjectSet = new HashSet<>();
         subjects.forEach(subject -> {
-            SubjectDto subjectDto = new SubjectDto(subject.getId(), subject.getSubject(), subject.getDescription());
+            SubjectDto subjectDto = SubjectDto.builder()
+                    .id(subject.getId())
+                    .subject(subject.getSubject())
+                    .description(subject.getDescription())
+                    .additionalInfo(subject.getAdditionalInfo())
+                    .simpleImages(subject.getSimpleImages())
+                    .build();
             subjectSet.add(subjectDto);
         });
         return subjectSet;

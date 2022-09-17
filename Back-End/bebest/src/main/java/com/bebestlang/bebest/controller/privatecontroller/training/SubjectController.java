@@ -1,6 +1,7 @@
 package com.bebestlang.bebest.controller.privatecontroller.training;
 
 import com.bebestlang.bebest.dto.training.SubjectDto;
+import com.bebestlang.bebest.mapper.training.SubjectMapper;
 import com.bebestlang.bebest.service.training.SubjectService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -23,18 +24,20 @@ public class SubjectController {
 
     private final SubjectService subjectService;
 
+    private final SubjectMapper subjectMapper;
+
     @PostMapping
     public Mono<SubjectDto> saveSubject(@RequestBody SubjectDto subjectDto) {
-        return subjectService.saveSubject(subjectDto);
+        return subjectService.saveSubject(subjectDto).map(subjectMapper::toSubjectDto);
     }
 
     @GetMapping
     public Flux<SubjectDto> findAllSubjects() {
-        return subjectService.findAllSubjects();
+        return subjectService.findAllSubjects().map(subjectMapper::toSubjectDto);
     }
 
     @GetMapping("/{id}")
     public Mono<SubjectDto> findSubjectById(@PathVariable("id") String id) {
-        return subjectService.findSubjectById(id);
+        return subjectService.findSubjectById(id).map(subjectMapper::toSubjectDto);
     }
 }

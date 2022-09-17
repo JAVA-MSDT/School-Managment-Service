@@ -3,6 +3,7 @@ package com.bebestlang.bebest.service.training;
 import com.bebestlang.bebest.dto.training.SubjectDto;
 import com.bebestlang.bebest.exception.training.SubjectException;
 import com.bebestlang.bebest.mapper.training.SubjectMapper;
+import com.bebestlang.bebest.modal.training.Subject;
 import com.bebestlang.bebest.repository.training.SubjectRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,24 +18,22 @@ import reactor.core.publisher.Mono;
 public class SubjectService {
 
     private final SubjectRepository subjectRepository;
-
     private final SubjectMapper subjectMapper;
 
-    public Mono<SubjectDto> saveSubject(SubjectDto subjectDto) {
-        return subjectRepository.save(subjectMapper.toSubject(subjectDto))
-                .map(subjectMapper::toSubjectDto);
+    public Mono<Subject> saveSubject(SubjectDto subjectDto) {
+        return subjectRepository.save(subjectMapper.toSubject(subjectDto));
     }
 
-    public Flux<SubjectDto> findAllSubjects() {
-        return subjectRepository.findAll()
-                .map(subjectMapper::toSubjectDto);
+    public Flux<Subject> findAllSubjects() {
+        return subjectRepository.findAll();
+
     }
 
-    public Mono<SubjectDto> findSubjectById(String id) {
+    public Mono<Subject> findSubjectById(String id) {
         return subjectRepository.findById(id)
                 .switchIfEmpty(Mono.error(new SubjectException(String.format("Subject with Id:: %s not found ", id),
-                        HttpStatus.NOT_FOUND)))
-                .map(subjectMapper::toSubjectDto);
+                        HttpStatus.NOT_FOUND)));
+
     }
 
 }
