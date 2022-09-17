@@ -91,7 +91,8 @@
           <ul class="dropdown-menu dropdown-menu-dark">
             <li>
               <a
-                class="dropdown-item active"
+              [class.active]="selectLang == 'en'"
+                class="dropdown-item"
                 href="javascript:void(0);"
                 (click)="useLanguage('en')"
                 >{{ "en" | translate }}</a
@@ -99,6 +100,7 @@
             </li>
             <li>
               <a
+              [class.active]="selectLang == 'pl'"
                 class="dropdown-item"
                 href="javascript:void(0);"
                 (click)="useLanguage('pl')"

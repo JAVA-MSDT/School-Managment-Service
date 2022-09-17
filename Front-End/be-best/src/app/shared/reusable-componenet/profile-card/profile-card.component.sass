@@ -1,5 +1,12 @@
-.left-img
-    background-image: url("/assets/images/calendar-bg.jpg")
-    background-position: center
-    background-repeat: no-repeat
-    background-size: 100% 100%
+.card-container
+    transition: all 0.4s ease-in
+    .img-container
+        transition: all 0.4s ease-in
+    .image
+        transition: all 0.4s ease-in
+    &:hover
+        .image
+            transform: scale(1.1)
+            transform-origin: 50% 50%
+        .img-container
+            opacity: .9
