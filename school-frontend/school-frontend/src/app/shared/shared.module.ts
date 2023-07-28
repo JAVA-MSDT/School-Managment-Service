@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
-import { RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { AppRoutingModule } from './app-routing.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -21,7 +22,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
   imports: [
     CommonModule,
     NgbCollapseModule,
-    RouterLink,
+    RouterModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -29,11 +30,13 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         useFactory: httpTranslateLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    AppRoutingModule
   ],
   exports: [
     MainNavComponent,
-    TranslateModule
+    TranslateModule,
+    AppRoutingModule
   ]
 })
 export class SharedModule { }
