@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +12,7 @@ import { HeaderComponent } from './header/header.component';
 
 // Factory function required during AOT compilation
 export function httpTranslateLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 
@@ -33,13 +33,15 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    NgbNavModule
   ],
   exports: [
     MainNavComponent,
     TranslateModule,
     AppRoutingModule,
-    HeaderComponent
+    HeaderComponent,
+    NgbNavModule
   ]
 })
 export class SharedModule { }

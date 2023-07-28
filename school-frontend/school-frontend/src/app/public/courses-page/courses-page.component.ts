@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./courses-page.component.scss']
 })
 export class CoursesPageComponent {
-
+  containerStyle: any = {
+    backgroundColor: 'aqua',
+    backgroundImage: 'url(assets/image/school_courses.jpg)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    height: '300px',
+  }
+  isTitleDisplay = false;
+  isDiscriptionDisplay = false;
 }

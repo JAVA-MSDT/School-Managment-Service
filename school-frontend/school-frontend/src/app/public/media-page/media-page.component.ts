@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./media-page.component.scss']
 })
 export class MediaPageComponent {
-
+  active = 1;
 }

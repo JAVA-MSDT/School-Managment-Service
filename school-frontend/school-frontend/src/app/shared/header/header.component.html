@@ -1,1 +1,6 @@
-<p>header works!</p>
+<div class="" [ngStyle]="containerStyle">
+    <div class="container">
+        <h1 *ngIf="isTitleDisplay" class="display-4">Fluid jumbotron</h1>
+        <p *ngIf="isDiscriptionDisplay" class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+</div>

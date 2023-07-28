@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomepageComponent {
 
+  containerStyle: any = {
+    backgroundColor: 'aqua',
+    backgroundImage:'url(assets/image/kid_studying.jpg)',
+    backgroundRepeat:'no-repeat',
+    backgroundSize: 'cover',
+    height:'500px',
+  }
 }

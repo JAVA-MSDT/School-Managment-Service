@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'school-header',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  @Input()
+  containerStyle: any;
+  @Input()
+  isTitleDisplay: boolean = true;
+  @Input()
+  isDiscriptionDisplay: boolean = true;
 }
