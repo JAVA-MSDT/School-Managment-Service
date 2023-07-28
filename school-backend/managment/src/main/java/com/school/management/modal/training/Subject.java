@@ -1,9 +1,6 @@
 package com.school.management.modal.training;
 
-import java.util.Map;
-import java.util.Set;
-
-import com.school.management.modal.common.Image;
+import com.school.resource.model.image.Image;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -16,6 +13,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Map;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor

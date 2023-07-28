@@ -1,15 +1,15 @@
 package com.school.management.dto.training;
 
-import java.util.Map;
-import java.util.Set;
-
-import com.school.management.dto.common.ImageDto;
+import com.school.resource.dto.ImageDto;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Map;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor

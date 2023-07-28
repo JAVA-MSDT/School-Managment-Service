@@ -1,7 +1,4 @@
-package com.school.management.dto.common;
-
-import java.util.Map;
-import java.util.Set;
+package com.school.resource.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.school.management.modal.common.FileStatus;
@@ -12,6 +9,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Map;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
