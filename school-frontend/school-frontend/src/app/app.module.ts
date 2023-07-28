@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from './shared/shared.module';
+import { PublicModule } from './public/public.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-const costumModules = [
-  SharedModule
-]
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    ...costumModules,
+   // AppRoutingModule,
+    SharedModule,
+   // PublicModule,
     NgbModule
   ],
   providers: [],

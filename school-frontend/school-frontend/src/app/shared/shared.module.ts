@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
 
 
 // Factory function required during AOT compilation
@@ -17,7 +18,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    MainNavComponent
+    MainNavComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
   exports: [
     MainNavComponent,
     TranslateModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeaderComponent
   ]
 })
 export class SharedModule { }
