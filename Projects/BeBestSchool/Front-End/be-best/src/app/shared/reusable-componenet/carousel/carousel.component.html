@@ -1,0 +1,18 @@
+<div class="row carousel-container py-2">
+  <ngb-carousel *ngIf="carouselImage">
+    <ng-template *ngFor="let image of carouselImage" ngbSlide>
+      <div class="picsum-img-wrapper text-center">
+        <img
+          [src]="image | imageDecoder"
+          alt="{{ image.alt | descriptionTranslator }}"
+          width="75%"
+          height="600px"
+          class="rounded shadow"
+        />
+      </div>
+      <div class="carousel-caption d-flex align-items-center justify-content-center flex-column">
+        <h3 class="border-bottom rounded shadow w-50 pb-2">{{ image.alt | descriptionTranslator }}</h3>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

@@ -1,0 +1,125 @@
+<div class="row p-4">
+  <div class="col-md-3 p-4">
+    <div class="mb-5">
+      <h2 class="contact-label">{{ "contact.details" | translate }}</h2>
+      <a class="contact-method" href="tel:+48663613772"
+        ><h4>(+48) 66 361 37 72</h4></a
+      >
+      <a class="contact-method text-break" href="mailto:biuro@be-best.pl"
+        ><h4>biuro@be-best.pl</h4></a
+      >
+    </div>
+    <div class="mb-5">
+      <h2 class="contact-label">{{ "opening.hours" | translate }}</h2>
+      <h4>{{ "open.time" | translate }}</h4>
+    </div>
+    <div class="mb-5">
+      <h2 class="contact-label">{{ "school.data" | translate }}</h2>
+      <h4 class="text-center">Be Best - Anna Kania</h4>
+      <h4 class="text-center">ul. Rybnicka 4/2 44 - 240 Żory</h4>
+      <h4 class="text-center">NIP: 651-162-19-47</h4>
+      <h4 class="text-center">Regon: 242615464</h4>
+    </div>
+  </div>
+  <div class="col-md-9 p-4">
+    <h4 class="mb-5">{{ "contact.us.message" | translate }}</h4>
+    <form class="border rounded p-4 shadow">
+      <div class="mb-3">
+        <label for="course" class="form-label">
+          {{ "language" | translate }} / {{ "course.name" | translate }}</label
+        >
+        <input type="text" class="form-control form-control-lg" id="course" />
+      </div>
+      <div class="mb-3">
+        <label for="fullname" class="form-label">
+          {{ "full.name" | translate }}</label
+        >
+        <input type="text" class="form-control form-control-lg" id="fullname" />
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-8">
+          <label for="phonenumber" class="form-label">{{
+            "phone.number" | translate
+          }}</label>
+          <input
+            type="phone"
+            class="form-control form-control-lg"
+            id="phonenumber"
+          />
+        </div>
+        <div class="col-sm-4">
+          <label for="phonenumber" class="form-label">{{
+            "age" | translate
+          }}</label>
+          <input
+            type="number"
+            class="form-control form-control-lg"
+            id="phonenumber"
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">{{ "email" | translate }}</label>
+        <input type="email" class="form-control form-control-lg" id="email" />
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="terms" />
+        <label class="form-check-label" for="terms">{{
+          "read.terms" | translate
+        }}</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="feedback" />
+        <label class="form-check-label" for="feedback">{{
+          "feedback.agreement" | translate
+        }}</label>
+      </div>
+      <button type="submit" class="btn btn-dark">
+        {{ "send" | translate }}
+      </button>
+    </form>
+  </div>
+</div>
+<div class="row p-4 bg-light border">
+  <div class="col-md-8 text-center mb-5">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.0788614552857!2d18.690206516460165!3d50.04735397942182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47114ccdf4415c75%3A0xc20efa7e4ef22108!2sBe%20Best!5e0!3m2!1sen!2spl!4v1662237130665!5m2!1sen!2spl"
+      width="100%"
+      height="500"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="shadow rounded"
+    ></iframe>
+  </div>
+  <div
+    class="col-md-4 mb-5 d-flex justify-content-center flex-column align-items-center"
+  >
+      <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBeBestSzkola&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+        width="340"
+        height="500"
+        style="border: none; overflow: hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      ></iframe>
+    <div class="mt-4">
+      <a
+        href="https://www.linkedin.com/company/be-best-lang/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>
+          <img
+            src="assets/images/linkedin.png"
+            width="150px"
+            height="50px"
+            alt="linkedin Icon"
+        /></span>
+      </a>
+    </div>
+  </div>
+</div>

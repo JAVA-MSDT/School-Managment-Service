@@ -1,0 +1,66 @@
+[
+    {
+        "_id": "11111111111111",
+        "subject": "Polish",
+        "description": {
+          "EN": "English Description",
+          "PL": "Polish Description"
+        }
+      },
+      {
+        "_id": "222222222222",
+        "subject": "Arabic",
+        "description": {
+          "EN": "English Description",
+          "PL": "Polish Description"
+        }
+      },
+      {
+        "_id": "33333333333333333",
+        "subject": "English",
+        "description": {
+          "EN": "English Description",
+          "PL": "Polish Description"
+        }
+      },
+      {
+        "_id": "444444444444444",
+        "subject": "Russian",
+        "description": {
+          "EN": "English Description",
+          "PL": "Polish Description"
+        }
+      },
+      {
+        "_id": "555555555555555555",
+        "subject": "Korean",
+        "description": {
+          "EN": "English Description",
+          "PL": "Polish Description"
+        }
+      },
+      {
+        "_id": "666666666666",
+        "subject": "German",
+        "description": {
+          "EN": "English Description",
+          "PL": "Polish Description"
+        }
+      },
+      {
+        "_id": "777777777777777777",
+        "subject": "Italian",
+        "description": {
+          "EN": "English Description",
+          "PL": "Polish Description"
+        }
+      },
+      {
+        "_id": "88888888888888",
+        "subject": "Spanesh",
+        "description": {
+          "EN": "English Description",
+          "PL": "Polish Description"
+        }
+      }
+]
