@@ -1,0 +1,26 @@
+<div class="row text-center py-4 division-container">
+  <h2>{{ "having.fun" | translate }}</h2>
+</div>
+<div class="row">
+  <ul
+    ngbNav
+    #nav="ngbNav"
+    [activeId]="1"
+    class="nav-tabs justify-content-center custom-lable sticky-top mx-0"
+  >
+    <li [ngbNavItem]="1">
+      <a class="py-4" ngbNavLink>{{ "photos" | translate }}</a>
+      <ng-template ngbNavContent>
+        <b-best-photos [images] = "images" [carouselOneImages]="carouselOneImages"></b-best-photos>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a class="py-4" ngbNavLink>{{ "videos" | translate }}</a>
+      <ng-template ngbNavContent>
+        <b-best-videos></b-best-videos>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

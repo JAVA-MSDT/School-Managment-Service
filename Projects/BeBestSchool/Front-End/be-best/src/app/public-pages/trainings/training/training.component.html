@@ -1,0 +1,66 @@
+<div class="row d-flex justify-content-around training-container m-auto py-4">
+  <div
+    class="col-md-3 bg-gry py-2 d-flex flex-column border shadow rounded my-2 bg-light"
+  >
+    <h1 class="border rounded text-center p-2 shadow custom-lable">
+      {{ training.title }}
+    </h1>
+    <img
+      src="/assets/images/language.jpg"
+      class="img-fluid rounded mb-1 image"
+      alt="..."
+    />
+
+    <div
+      class="mt-auto w-100 d-flex justify-content-center align-items-center border-bottom border-top rounded shadow custom-lable"
+    >
+      <h2>Share to.....</h2>
+    </div>
+  </div>
+  <div class="col-md-5 py-2 border shadow rounded my-2 bg-light">
+    <p class="border rounded text-center p-2">
+      {{ training.description | descriptionTranslator }}
+    </p>
+    <p class="border rounded text-center p-2">
+      <span>Starting Date:: </span>{{ training.startingDate }}
+    </p>
+    <p class="border rounded text-center p-2">
+      <span>Ending Date:: </span> {{ training.endDate }}
+    </p>
+    <div class="">
+      <p class="border rounded text-center p-2">
+        <span>Course Status:: </span> {{ training.trainingStatus }}
+      </p>
+    </div>
+    <div class="">
+      <p class="border rounded text-center p-2">
+        <span>Course Subject:: </span> {{ subject.description | descriptionTranslator }}
+      </p>
+      <p class="border rounded text-center p-2">
+        <span>Subject Title:: </span> {{ subject.subject }}
+      </p>
+      <p>{{ user.middleName | uppercase }}</p>
+    </div>
+  </div>
+  <div class="col-md-3 py-2 border shadow rounded my-2 bg-light">
+    <h1 class="border rounded text-center p-2 shadow custom-lable">
+      {{ user.firstName }} {{ user.lastName }}
+    </h1>
+    <img
+      src="/assets/images/language.jpg"
+      class="img-fluid rounded mb-1 image"
+      alt="..."
+    />
+    <div class="">
+      <h2
+        class="border text-center rounded py-2 custom-lable"
+        *ngFor="let subject of user.subjects"
+      >
+        {{ subject.subject }}
+      </h2>
+    </div>
+  </div>
+</div>
+<div class="row p-4 mb-2 bg-light shadow rounded">
+  <div class="col-12">Reviews</div>
+</div>

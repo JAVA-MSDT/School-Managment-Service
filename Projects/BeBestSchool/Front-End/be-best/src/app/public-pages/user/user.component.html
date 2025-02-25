@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="p-2 border shadow rounded my-2 bg-light">
+        <h1 class="border rounded text-center p-2 shadow custom-lable">
+          {{ user.firstName }} {{ user.lastName }}
+        </h1>
+        <div class="border-bottom pb-5">
+          <img
+            src="/assets/images/language.jpg"
+            class="img-fluid rounded mb-1 image"
+            alt="..."
+          />
+        </div>
+        <div class="pt-2">
+          <h2
+            class="border text-center rounded custom-lable py-4"
+            *ngFor="let subject of user.subjects"
+          >
+            {{ subject.subject }}
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="p-2 border shadow rounded my-2 bg-light">
+        <h2 class="border rounded p-2 shadow custom-lable">
+          {{ "teacher.details" | translate }}
+        </h2>
+        <h4 class="border rounded p-2 shadow custom-lable">
+            {{ user.bio | descriptionTranslator}}
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>

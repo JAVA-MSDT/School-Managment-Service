@@ -1,0 +1,115 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0);" [routerLink]="['/']"
+      ><span class=""
+        ><img
+          src="assets/images/bebestLogo1.png"
+          alt=""
+          width="75px"
+          height="75px"
+          class="rounded"
+      /></span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="javascript:void(0);"
+            [routerLink]="['']"
+            >{{ "home" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0);"
+            [routerLink]="['/about-us']"
+            >{{ "about.us" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0);"
+            [routerLink]="['/contact-us']"
+            >{{ "contact.us" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0);"
+            [routerLink]="['/trainings']"
+            >{{ "training" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0);"
+            [routerLink]="['/gallery']"
+            >{{ "gallery" | translate }}</a
+          >
+        </li>
+      </ul>
+      <div class="d-flex align-items-around">
+        <!--         <div class="">
+        <button
+          class="btn btn-outline-primary me-2"
+          type="submit"
+          [routerLink]="['/login']"
+        >
+          {{ "student.area" | translate }}
+        </button>
+      </div> -->
+        <div class="dropdown-center">
+          <button
+            class="btn btn-info dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ "language" | translate }}
+          </button>
+          <!--           <select class="form-select" aria-label="Default select example">
+            <option [attr.selected]="selectLang === 'en' ?  true : null" value="1">{{ "en" | translate }}</option>
+            <option [attr.selected]="selectLang === 'pl' ?  true : null" value="2">{{ "pl" | translate }}</option>
+          </select> -->
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a
+              [class.active]="selectLang == 'en'"
+                class="dropdown-item"
+                href="javascript:void(0);"
+                (click)="useLanguage('en')"
+                >{{ "en" | translate }}</a
+              >
+            </li>
+            <li>
+              <a
+              [class.active]="selectLang == 'pl'"
+                class="dropdown-item"
+                href="javascript:void(0);"
+                (click)="useLanguage('pl')"
+                >{{ "pl" | translate }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,43 @@
+[
+    {
+        "building": "4",
+        "apartment": "C",
+        "city": "Sharm El-Sheikh",
+        "country": "Egypt",
+        "_id": "111111111",
+        "provenance": "South sinai",
+        "street": "Red Sea Street",
+        "zipCode": "4444"
+      },
+      {
+        "building": "111",
+        "apartment": "8C",
+        "city": "Katowice",
+        "country": "Poland",
+        "_id": "222222222",
+        "provenance": "Silesia",
+        "street": "Gliwicka",
+        "zipCode": "40-855"
+      },
+      {
+        "building": "2",
+        "apartment": "A",
+        "city": "Żory",
+        "country": "Poland",
+        "_id": "333333333",
+        "provenance": "Silesia",
+        "street": "Żory",
+        "zipCode": "4444"
+      },
+      {
+        "building": "8",
+        "apartment": "28C",
+        "city": "Gliwic",
+        "country": "Poland",
+        "_id": "444444444",
+        "provenance": "Silesia",
+        "street": "Gliwicka",
+        "zipCode": "40-900"
+      }
+
+]
